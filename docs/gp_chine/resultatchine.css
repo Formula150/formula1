@@ -1,12 +1,12 @@
 body{
-    background-image: url(fond_gp_austra.jpg);
+    background-image: url(fond_gp_chine.jpg);
     background-repeat: no-repeat;
     background-size: 105% 105%;                        /* Allonge l'image de fond horizontalement et verticalement */
     /*background-size: cover; */                         /* utilise 'cover' pour couvrir tout l'écran */
     /*background-position: center -50px; */              /* Centrage de l'image et décale l'image de fond vers le bas */
     /* background-attachment: fixed;*/                 /* fixe l'image de fond lors du defilement */
     font-family: Arial, sans-serif;       
-    margin: -20px;
+    margin: 20px;
     padding: 150px;                                    /* Pas de padding pour éviter les marges internes */
 }
 
@@ -37,7 +37,7 @@ caption {
 
 th, td {
   border: 1px solid #333; 
-  background-color: rgba(216, 209, 209, 0.8);     /* Fond légèrement transparent */
+  background-color: rgba(216, 209, 209, 0.8);     /* le 0.8 regle la transparence */
   padding: 8px 12px;
   font-size: 1em;
   text-align: center;
@@ -66,19 +66,19 @@ tr:nth-child(even) td {
   background: transparent;                                     /* Bordure (fond) transparent */
   padding: 0px;
   border: 2px solid transparent;          /* Bordure transparente */
-  opacity: 0.9;                           /* Images un peu transparentes */
+  opacity: 0.95;                           /* Images un peu transparentes */
 }
 
 .images-top img:nth-child(1) {     /* augmente la taille de l'image bryan */
-  height: 460px;
+  height: 410px;
 }
 .images-top img:nth-child(2) {     /* augmente la taille de l'image gabriel */
-  height: 550px;
+  height: 500px;
 }
 .images-top img:nth-child(3) {     /* augmente la taille de l'image noah */
-  height: 420px;
+  height: 370px;
 }
 
-tr:nth-child(2) td {
+tr:nth-child(18) td {
   background-color: rgb(175, 17, 175);      /* surligne la ligne numero 3 */
 }
