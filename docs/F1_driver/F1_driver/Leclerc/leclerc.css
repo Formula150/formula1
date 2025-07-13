@@ -13,16 +13,16 @@ body {
   border-radius: 12px;
   padding: 40px;
   box-shadow:
-    0 0 20px rgb(53, 191, 216),
-    0 0 40px rgb(53, 191, 216);
+    0 0 20px rgb(250, 36, 3),
+    0 0 40px rgb(250, 36, 3);
 }
 
 h1 {
   text-align: center;
-  color: rgb(214, 157, 157);
+  color: rgb(250, 36, 3);
   text-shadow:
-    0 0 10px rgb(53, 191, 216),
-    0 0 20px rgb(53, 191, 216);
+    0 0 10px rgb(250, 36, 3),
+    0 0 20px rgb(250, 36, 3);
 }
 
 .image-wrapper {
@@ -37,7 +37,7 @@ h1 {
 }
 
 h2 {
-  color: #3588b9;
+  color: #f31105;
   margin-top: 40px;
 }
 
@@ -66,6 +66,8 @@ iframe {
   padding: 10px 20px;
   border-radius: 6px;
   text-decoration: none;
+  display: block;
+  margin-bottom: 8px;
 }
 
 .back-link a:hover {

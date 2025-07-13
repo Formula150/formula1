@@ -13,16 +13,16 @@ body {
   border-radius: 12px;
   padding: 40px;
   box-shadow:
-    0 0 20px rgb(10, 163, 190),
-    0 0 40px rgb(10, 163, 190);
+    0 0 20px rgb(48, 197, 93),
+    0 0 40px rgb(48, 197, 93);
 }
 
 h1 {
   text-align: center;
-  color: rgb(10, 163, 190);
+  color: rgb(48, 197, 93);
   text-shadow:
-    0 0 10px rgb(10, 163, 190),
-    0 0 20px rgb(10, 163, 190);
+    0 0 10px rgb(48, 197, 93),
+    0 0 20px rgb(48, 197, 93);
 }
 
 .image-wrapper {
@@ -37,7 +37,7 @@ h1 {
 }
 
 h2 {
-  color: #3588b9;
+  color: #1eb234;
   margin-top: 40px;
 }
 
