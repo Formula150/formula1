@@ -1,9 +1,9 @@
 body{
-    background-image: url(fond_gp_austra.jpg);
+    background-image: url(gp_fond_austra.jpg);
     background-repeat: no-repeat;
-    background-size: 105% 105%;                        /* Allonge l'image de fond horizontalement et verticalement */
+    background-size: 105% 120%;                        /* Allonge l'image de fond horizontalement et verticalement */
     /*background-size: cover;                          /* utilise 'cover' pour couvrir tout l'écran */
-    /*background-position: center -50px;               /* Centrage de l'image et décale l'image de fond vers le bas */
+    background-position: center -200px;               /* Centrage de l'image et décale l'image de fond vers le bas */
     /* background-attachment: fixed;*/                 /* fixe l'image de fond lors du defilement */
     font-family: Arial, sans-serif;       
     margin: -20px;
@@ -109,5 +109,33 @@ tr:nth-child(2) td {
   height: 100%;
   object-fit: cover;
   display: block;
-  border-radius: 12px; /* arrondi les bords de l'image */
+  border-radius: 12px;           /* arrondi les bords de l'image */
+}
+
+.home-btn-row {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 18px;
+  width: 100%;
+  margin: 24px auto 0 auto;
+}
+
+.home-btn-text {
+  color: #fff;
+  font-style: italic;
+  /*text-decoration: underline;*/
+  font-size: 1.5em;
+  margin: 0;
+  white-space: nowrap;         /* évite le retour à la ligne */
+  display: flex;
+  align-items: center;
+}
+
+.arrow-right {
+  font-size: 4em;
+  color: #fff;
+  margin-left: 10px;
+  vertical-align: middle;
+  text-decoration: none;          /* retire le soulignement */
 }
