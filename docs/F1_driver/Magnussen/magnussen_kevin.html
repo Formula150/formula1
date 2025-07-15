@@ -33,11 +33,27 @@
       </ul>
     </section>
 
+     <div class="back-link">
+  <a id="retourBtn" href="../../index.html">← Retour au Grand Prix</a>
+</div>
+
     <!-- Bloc de liens à ajouter dans chaque fichier HTML de F1_driver -->
-    <div class="back-link">
-      <div><a href="../../gp/gp_australie/resultataustralie.html">Retour aux résultats</a></div>
-      <div><a href="../../index.html">← Retour à l'accueil</a></div>
-    </div>
-  </div>
+   <script>
+  const params = new URLSearchParams(window.location.search);
+  const retour = params.get("retour");
+
+  const retourBtn = document.getElementById("retourBtn");
+
+  if (retour === "australie") {
+    retourBtn.href = "../../gp/gp_australie/resultataustralie.html";
+    retourBtn.textContent = "← Retour au GP Australie";
+  } else if (retour === "chine") {
+    retourBtn.href = "../../gp/gp_chine/resultatchine.html";
+    retourBtn.textContent = "← Retour au GP Chine";
+  } else {
+    retourBtn.href = "../../index.html";
+    retourBtn.textContent = "← Retour à l'accueil";
+  }
+</script>
 </body>
 </html>
