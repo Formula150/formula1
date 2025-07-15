@@ -82,3 +82,60 @@ tr:nth-child(even) td {
 tr:nth-child(18) td {
   background-color: rgb(175, 17, 175);      /* surligne la ligne numero 3 */
 }
+
+.home-btn-container {
+  display: flex;
+  justify-content: flex-end; /* aligne le bouton à droite */
+  margin-top: 24px;
+}
+
+.home-btn {
+  background-color: #fff;
+  border: 2px solid #2257e9;
+  border-radius: 12px;
+  padding: 0;
+  width: 160px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.home-btn-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;           /* arrondi les bords de l'image */
+}
+
+.home-btn-row {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 18px;
+  width: 100%;
+  margin: 24px auto 0 auto;
+}
+
+.home-btn-text {
+  color: #fff;
+  font-style: italic;
+  /*text-decoration: underline;*/
+  font-size: 1.5em;
+  margin: 0;
+  white-space: nowrap;         /* évite le retour à la ligne */
+  display: flex;
+  align-items: center;
+}
+
+.arrow-right {
+  font-size: 4em;
+  color: #fff;
+  margin-left: 10px;
+  vertical-align: middle;
+  text-decoration: none;          /* retire le soulignement */
+}
