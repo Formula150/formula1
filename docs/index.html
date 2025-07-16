@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <title>F1</title>
+  <title>F1 Saison 2024</title>
   <link rel="stylesheet" href="projet.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="logo_f1.png">
@@ -11,37 +11,249 @@
 
 <body>
 
-  <form id="formJoueurs">
-    
-    <h1>F1</h1>
-    <div style="text-align: center;">
-      <img src="logo_f1.png" alt="logo F1" style="width: 20%; height: 20%;">
-    </div>
-  </form>
+  <div class="top-bar">
+    <img src="logo_fia.jpg" alt="Logo FIA" class="top-bar-img">
+    <span class="top-bar-vertical"></span>
+    <span class="top-bar-text"> Saison 2024</span>
+    <span class="top-bar-right">
+      <a href="https://f1store.formula1.com/fr/">Magasin</a>
+      <span class="top-bar-vertical"></span>
+      <a href="https://www.f1authentics.com/">Authentique</a>
+      <span class="top-bar-vertical"></span>
+      <a href="https://f1tv.formula1.com/">
+        <button type="button" class="f1_tv_btn">
+          <img src="logo_f1_2.png" alt="f1-tv">
+          <span class="f1_tv_text">F1 TV</span>
+        </button>
+      </a>
+    </span>
+  </div>
 
-  <a href="gp/gp_australie/resultataustralie.html">Australie</a><br>
-  <a href="gp/gp_chine/resultatchine.html">Chine</a><br>
-  <a href="gp/gp_japon/resultatjapon.html">Japon</a><br>
-  <a href="gp/gp_bahreïn/resultatbahreïn.html">Bahreïn</a><br>
-  <a href="gp/gp_arabie_saoudite/resultatarabiesaoudite.html">Arabie saoudite</a><br>
-  <a href="gp/gp_miami/resultatmiami.html">Miami</a><br>
-  <a href="gp/gp_italie_imola/resultatitalieimola">Italie (Imola)</a><br>
-  <a href="gp/gp_monaco/resultatmonaco.html">Monaco</a><br>
-  <a href="gp/gp_espagne/resultatespagne.html">Espagne</a><br>
-  <a href="gp/gp_canada/resultatcanada.html">Canada</a><br>
-  <a href="gp/gp_autriche/resultatautriche.html">Autriche</a><br>
-  <a href="gp/gp_grande_bretagne/resultatgrandebretagne.html">Grande Bretagne</a><br>
-  <a href="gp/gp_belgique/resultatbelgique.html">Belgique</a><br>
-  <a href="gp/gp_hongrie/resultathongrie.html">Hongrie</a><br>
-  <a href="gp/gp_pays_bas/resultatpaysbas.html">Pays Bas</a><br>
-  <a href="gp/gp_italie_monza/resultatitaliemonza.html">Italie (Monza)</a><br>
-  <a href="gp/gp_azerbaïdjan/resultatazerbaïdjan.html">Azerbaïdjan</a><br>
-  <a href="gp/gp_singapour/resultatsingapour.html">Singapour</a><br>
-  <a href="gp/gp_etats_unis/resultatetatsunis.html">Etats Unis</a><br>
-  <a href="gp/gp_mexique/resultatmexique.html">Mexique</a><br>
-  <a href="gp/gp_bresil/resultatbresil.html">Brésil</a><br>
-  <a href="gp/gp_las_vegas/resultatlasvegas.html">Las Vegas</a><br>
-  <a href="gp/gp_qatar/resultatqatar.html">Qatar</a><br>
-  <a href="gp/gp_abu_dhabi/resultatabudhabi.html">Abu dhabi</a><br>
+  <div class="banniere">
+    <div class="header-container">
+      <img src="logo_f1_3.png" alt="Logo F1" class="banniere-img">
+      <div class="menu-container">
+        <span class="menu-trigger" onclick="toggleMenu()">Grand Prix</span>
+        <div class="menu-list" id="gp-dropdown">
+          <ul>
+            <li><a href="gp/gp_australie/resultataustralie.html">Australie</a></li>
+            <li><a href="gp/gp_chine/resultatchine.html">Chine</a></li>
+            <li><a href="gp/gp_japon/resultatjapon.html">Japon</a></li>
+            <li><a href="gp/gp_bahreïn/resultatbahreïn.html">Bahreïn</a></li>
+            <li><a href="gp/gp_arabie_saoudite/resultatarabiesaoudite.html">Arabie saoudite</a></li>
+            <li><a href="gp/gp_miami/resultatmiami.html">Miami</a></li>
+            <li><a href="gp/gp_italie_imola/resultatitalieimola">Italie (Imola)</a></li>
+            <li><a href="gp/gp_monaco/resultatmonaco.html">Monaco</a></li>
+            <li><a href="gp/gp_espagne/resultatespagne.html">Espagne</a></li>
+            <li><a href="gp/gp_canada/resultatcanada.html">Canada</a></li>
+            <li><a href="gp/gp_autriche/resultatautriche.html">Autriche</a></li>
+            <li><a href="gp/gp_grande_bretagne/resultatgrandebretagne.html">Grande Bretagne</a></li>
+            <li><a href="gp/gp_belgique/resultatbelgique.html">Belgique</a></li>
+            <li><a href="gp/gp_hongrie/resultathongrie.html">Hongrie</a></li>
+            <li><a href="gp/gp_pays_bas/resultatpaysbas.html">Pays Bas</a></li>
+            <li><a href="gp/gp_italie_monza/resultatitaliemonza.html">Italie (Monza)</a></li>
+            <li><a href="gp/gp_azerbaïdjan/resultatazerbaïdjan.html">Azerbaïdjan</a></li>
+            <li><a href="gp/gp_singapour/resultatsingapour.html">Singapour</a></li>
+            <li><a href="gp/gp_etats_unis/resultatetatsunis.html">Etats Unis</a></li>
+            <li><a href="gp/gp_bresil/resultatbresil.html">Brésil</a></li>
+            <li><a href="gp/gp_las_vegas/resultatlasvegas.html">Las Vegas</a></li>
+            <li><a href="gp/gp_qatar/resultatqatar.html">Qatar</a></li>
+            <li><a href="gp/gp_abu_dhabi/resultatabudhabi.html">Abu dhabi</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="menu-container2">
+        <span class="menu-trigger2" onclick="toggleMenu2()">Pilotes</span>
+        <div class="menu-list2" id="pilotes-dropdown">
+          <ul>
+            <li><a href="gp/gp_australie/resultataustralie.html">Australie</a></li>
+            <li><a href="gp/gp_chine/resultatchine.html">Chine</a></li>
+            <li><a href="gp/gp_japon/resultatjapon.html">Japon</a></li>
+            <li><a href="gp/gp_bahreïn/resultatbahreïn.html">Bahreïn</a></li>
+            <li><a href="gp/gp_arabie_saoudite/resultatarabiesaoudite.html">Arabie saoudite</a></li>
+            <li><a href="gp/gp_miami/resultatmiami.html">Miami</a></li>
+            <li><a href="gp/gp_italie_imola/resultatitalieimola">Italie (Imola)</a></li>
+            <li><a href="gp/gp_monaco/resultatmonaco.html">Monaco</a></li>
+            <li><a href="gp/gp_espagne/resultatespagne.html">Espagne</a></li>
+            <li><a href="gp/gp_canada/resultatcanada.html">Canada</a></li>
+            <li><a href="gp/gp_autriche/resultatautriche.html">Autriche</a></li>
+            <li><a href="gp/gp_grande_bretagne/resultatgrandebretagne.html">Grande Bretagne</a></li>
+            <li><a href="gp/gp_belgique/resultatbelgique.html">Belgique</a></li>
+            <li><a href="gp/gp_hongrie/resultathongrie.html">Hongrie</a></li>
+            <li><a href="gp/gp_pays_bas/resultatpaysbas.html">Pays Bas</a></li>
+            <li><a href="gp/gp_italie_monza/resultatitaliemonza.html">Italie (Monza)</a></li>
+            <li><a href="gp/gp_azerbaïdjan/resultatazerbaïdjan.html">Azerbaïdjan</a></li>
+            <li><a href="gp/gp_singapour/resultatsingapour.html">Singapour</a></li>
+            <li><a href="gp/gp_etats_unis/resultatetatsunis.html">Etats Unis</a></li>
+            <li><a href="gp/gp_bresil/resultatbresil.html">Brésil</a></li>
+            <li><a href="gp/gp_las_vegas/resultatlasvegas.html">Las Vegas</a></li>
+            <li><a href="gp/gp_qatar/resultatqatar.html">Qatar</a></li>
+            <li><a href="gp/gp_abu_dhabi/resultatabudhabi.html">Abu dhabi</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="menu-container3">
+        <span class="menu-trigger3" onclick="toggleMenu3()">Ecuries</span>
+        <div class="menu-list3" id="ecuries-dropdown">
+          <ul>
+            <li><a href="gp/gp_australie/resultataustralie.html">Ecuries</a></li>
+            <li><a href="gp/gp_chine/resultatchine.html">Chine</a></li>
+            <li><a href="gp/gp_japon/resultatjapon.html">Japon</a></li>
+            <li><a href="gp/gp_bahreïn/resultatbahreïn.html">Bahreïn</a></li>
+            <li><a href="gp/gp_arabie_saoudite/resultatarabiesaoudite.html">Arabie saoudite</a></li>
+            <li><a href="gp/gp_miami/resultatmiami.html">Miami</a></li>
+            <li><a href="gp/gp_italie_imola/resultatitalieimola">Italie (Imola)</a></li>
+            <li><a href="gp/gp_monaco/resultatmonaco.html">Monaco</a></li>
+            <li><a href="gp/gp_espagne/resultatespagne.html">Espagne</a></li>
+            <li><a href="gp/gp_canada/resultatcanada.html">Canada</a></li>
+            <li><a href="gp/gp_autriche/resultatautriche.html">Autriche</a></li>
+            <li><a href="gp/gp_grande_bretagne/resultatgrandebretagne.html">Grande Bretagne</a></li>
+            <li><a href="gp/gp_belgique/resultatbelgique.html">Belgique</a></li>
+            <li><a href="gp/gp_hongrie/resultathongrie.html">Hongrie</a></li>
+            <li><a href="gp/gp_pays_bas/resultatpaysbas.html">Pays Bas</a></li>
+            <li><a href="gp/gp_italie_monza/resultatitaliemonza.html">Italie (Monza)</a></li>
+            <li><a href="gp/gp_azerbaïdjan/resultatazerbaïdjan.html">Azerbaïdjan</a></li>
+            <li><a href="gp/gp_singapour/resultatsingapour.html">Singapour</a></li>
+            <li><a href="gp/gp_etats_unis/resultatetatsunis.html">Etats Unis</a></li>
+            <li><a href="gp/gp_bresil/resultatbresil.html">Brésil</a></li>
+            <li><a href="gp/gp_las_vegas/resultatlasvegas.html">Las Vegas</a></li>
+            <li><a href="gp/gp_qatar/resultatqatar.html">Qatar</a></li>
+            <li><a href="gp/gp_abu_dhabi/resultatabudhabi.html">Abu dhabi</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  document.querySelector('.menu-trigger').addEventListener('click', function () {
+    const menu = document.querySelector('.menu-list');
+    menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+  });
+
+  // Optionnel : fermer le menu quand on clique ailleurs
+  document.addEventListener('click', function (e) {
+    const menu = document.querySelector('.menu-list');
+    const trigger = document.querySelector('.menu-trigger');
+    if (!menu.contains(e.target) && !trigger.contains(e.target)) {
+      menu.style.display = 'none';
+    }
+  });
+
+  document.querySelector('.menu-trigger2').addEventListener('click', function () {
+    const menu = document.querySelector('.menu-list2');
+    menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+  });
+
+  // Optionnel : fermer le menu quand on clique ailleurs
+  document.addEventListener('click', function (e) {
+    const menu = document.querySelector('.menu-list2');
+    const trigger = document.querySelector('.menu-trigger2');
+    if (!menu.contains(e.target) && !trigger.contains(e.target)) {
+      menu.style.display = 'none';
+    }
+  });
+
+  document.querySelector('.menu-trigger3').addEventListener('click', function () {
+    const menu = document.querySelector('.menu-list3');
+    menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+  });
+
+  // Optionnel : fermer le menu quand on clique ailleurs
+  document.addEventListener('click', function (e) {
+    const menu = document.querySelector('.menu-list3');
+    const trigger = document.querySelector('.menu-trigger3');
+    if (!menu.contains(e.target) && !trigger.contains(e.target)) {
+      menu.style.display = 'none';
+    }
+  });
+</script>  
+
+<div class="container">
+  <div class="card-grid">
+    <div class="card">
+      <img src="image_info_yuki.jpg" alt="Image 1">
+      <div class="card-text">Le transfert choque de RedBull cash app qui decide de changer le pilote Yuki Tsunoda pour le jeune pilote Mathis fraichement sorti de F2</div>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/300x150" alt="Image 2">
+      <div class="card-text">Texte de la deuxième case</div>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/300x150" alt="Image 3">
+      <div class="card-text">Texte de la troisième case</div>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/300x150" alt="Image 4">
+      <div class="card-text">Texte de la quatrième case</div>
+    </div>
+  </div>
+
+  <div class="layout">
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th colspan="5">Classement des pilotes</th>
+          </tr>
+          <tr>
+            <th>Position</th>
+            <th>N°</th>
+            <th>Pilote</th>
+            <th>Écurie</th>
+            <th>Points</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>17</td><td><a href="../../F1_driver/Tesson/tesson_gabriel.html?retour=australie">Tesson</a></td><td>Alpine</td><td>25 </td></tr>
+          <tr><td>2</td><td>80</td><td><a href="../../F1_driver/Moreau/moreau_bryan.html?retour=australie">Moreau</a></td><td>Mercedes</td><td>19</td></tr>
+          <tr><td>3</td><td>13</td><td><a href="../../F1_driver/Thomine/thomine_noah.html?retour=australie">Thomine</a></td><td>Aston Martin</td><td>15</td></tr>
+          <tr><td>4</td><td>2</td><td><a href="../../F1_driver/Sargeant/sargeant_logan.html?retour=australie">Sargeant</a></td><td>Williams</td><td>12</td></tr>
+          <tr><td>5</td><td>16</td><td><a href="../../F1_driver/Leclerc/leclerc_charles.html?retour=australie">Leclerc</a></td><td>Ferrari</td><td>10</td></tr>
+          <tr><td>6</td><td>4</td><td><a href="../../F1_driver/Norris/norris_lando.html?retour=australie">Norris</a></td><td>Mclaren</td><td>8</td></tr>
+          <tr><td>7</td><td>23</td><td><a href="../../F1_driver/Albon/albon_alexander.html?retour=australie">Albon</a></td><td>Williams</td><td>6</td></tr>
+          <tr><td>8</td><td>24</td><td><a href="../../F1_driver/Zhou/zhou_guanyu.html?retour=australie">Zhou</a></td><td>Stake</td><td>4</td></tr>
+          <tr><td>9</td><td>22</td><td><a href="../../F1_driver/Tsunoda/tsunoda_yuki.html?retour=australie">Tsunoda</a></td><td>Visa cash app</td><td>2</td></tr>
+          <tr><td>10</td><td>1</td><td><a href="../../F1_driver/Verstappen/verstappen_max.html?retour=australie">Verstappen</a></td><td>Red Bull</td><td>1</td></tr>
+          <tr><td>11</td><td>77</td><td><a href="../../F1_driver/Bottas/bottas_valtteri.html?retour=australie">Bottas</a></td><td>Stake</td><td>0</td></tr>
+          <tr><td>12</td><td>81</td><td><a href="../../F1_driver/Piastri/piastri_oscar.html?retour=australie">Piastri</a></td><td>Mclaren</td><td>0</td></tr>
+          <tr><td>13</td><td>55</td><td><a href="../../F1_driver/Sainz/sainz_carlos.html?retour=australie">Sainz</a></td><td>Ferrari</td><td>0</td></tr>
+          <tr><td>14</td><td>10</td><td><a href="../../F1_driver/Pierre/pierre_gasly.html?retour=australie">Gasly</a></td><td>Alpin</td><td>0</td></tr>
+          <tr><td>15</td><td>18</td><td><a href="../../F1_driver/Stroll/stroll_lance.html?retour=australie">Stroll</a></td><td>Aston Martin</td><td>0</td></tr>
+          <tr><td>16</td><td>20</td><td><a href="../../F1_driver/Magnussen/magnussen_kevin.html?retour=australie">Magnussen</a></td><td>Haas</td><td>0</td></tr>
+          <tr><td>17</td><td>3</td><td><a href="../../F1_driver/Ricciardo/ricciardo_daniel.html?retour=australie">Ricciardo</a></td><td>Visa cash app</td><td>0</td></tr>
+          <tr><td>18</td><td>11</td><td><a href="../../F1_driver/Perez/perez_sergio.html?retour=australie">Perez</a></td><td>Red bull</td><td>0</td></tr>
+          <tr><td>19</td><td>27</td><td><a href="../../F1_driver/Hülkenberg/hülkenberg_nico.html?retour=australie">Hülkenberg</a></td><td>Haas</td><td>0</td></tr>
+          <tr><td>20</td><td>44</td><td><a href="../../F1_driver/Hamilton/hamilton_lewis.html?retour=australie">Hamilton</a></td><td>Mercedes</td><td>0</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>
