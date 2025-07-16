@@ -28,7 +28,7 @@
         <li>🌍 Nationalité : Monégasque</li>
         <li>🎂 Né le : 16 octobre 1997</li>
         <li>🏁 Débuts en F1 : 2018 (Australie)</li>
-        <li>🏆 Victoires : 5</li>
+        <li>🏆 Victoires : 8</li>
         <li>🚗 Écurie actuelle : Ferrari</li>
       </ul>
     </section>
@@ -44,12 +44,15 @@
 
   const retourBtn = document.getElementById("retourBtn");
 
-  if (retour === "australie") {
+if (retour === "australie") {
     retourBtn.href = "../../gp/gp_australie/resultataustralie.html";
     retourBtn.textContent = "← Retour au GP Australie";
   } else if (retour === "chine") {
     retourBtn.href = "../../gp/gp_chine/resultatchine.html";
     retourBtn.textContent = "← Retour au GP Chine";
+  } else if (retour === "japon") {
+    retourBtn.href = "../../gp/gp_japon/resultatjapon.html";
+    retourBtn.textContent = "← Retour au GP Japon";
   } else {
     retourBtn.href = "../../index.html";
     retourBtn.textContent = "← Retour à l'accueil";

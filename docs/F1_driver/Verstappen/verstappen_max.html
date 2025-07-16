@@ -19,7 +19,7 @@
 
     <section>
       <h2>Biographie</h2>
-      <p>Max Verstappen est un pilote de Formule 1 de nationalité Néerlandaise, né le 30 septembre 1997. Il a débuté en F1 en 2015 (Australie) et court actuellement pour l’écurie Red Bull Racing. Il compte 59 victoire(s) à son actif.</p>
+      <p>Max Verstappen est un pilote de Formule 1 de nationalité Néerlandaise, né le 30 septembre 1997. Il a débuté en F1 en 2015 (Australie) et court actuellement pour l’écurie Red Bull Racing. Il compte 59 victoire(s) à son actif. Fils du pilote Jos Verstappen, il fait ses débuts en <a href="https://fr.wikipedia.org/wiki/Formule_1" target="_blank">Formule 1</a> au sein de la <a href="https://fr.wikipedia.org/wiki/Racing_Bulls" target="_blank">Scuderia Toro Rosso</a> en 2015 ; il est dès lors, à 17 ans et 166 jours, le plus jeune pilote de l'histoire à prendre le départ d'un Grand Prix puis devient, en Malaisie, le plus jeune pilote à marquer des points. La saison suivante, après seulement quatre épreuves, il est promu chez Red Bull Racing pour remplacer Daniil Kvyat qui fait le chemin inverse ; il remporte son premier Grand Prix, en Espagne, dès sa première course avec l'équipe autrichienne, devenant, à 18 ans et 227 jours, le plus jeune vainqueur en Formule 1. Au Brésil, le Néerlandais devient, à 19 ans et 44 jours, le plus jeune pilote à effectuer un meilleur tour en course (record battu en 2025 par <a href="https://fr.wikipedia.org/wiki/Andrea_Kimi_Antonelli" target="_blank">Andrea Kimi Antonelli</a>) ; il achève la saison cinquième du championnat, avec sept podiums. Si 2017 et 2018 sont gâchées par plusieurs abandons causés par des erreurs et des problèmes techniques, il remporte de nouveaux succès à Sepang, Mexico et Spielberg.</p>
     </section>
 
     <section>
@@ -46,12 +46,15 @@
 
   const retourBtn = document.getElementById("retourBtn");
 
-  if (retour === "australie") {
+ if (retour === "australie") {
     retourBtn.href = "../../gp/gp_australie/resultataustralie.html";
     retourBtn.textContent = "← Retour au GP Australie";
   } else if (retour === "chine") {
     retourBtn.href = "../../gp/gp_chine/resultatchine.html";
     retourBtn.textContent = "← Retour au GP Chine";
+  } else if (retour === "japon") {
+    retourBtn.href = "../../gp/gp_japon/resultatjapon.html";
+    retourBtn.textContent = "← Retour au GP Japon";
   } else {
     retourBtn.href = "../../index.html";
     retourBtn.textContent = "← Retour à l'accueil";

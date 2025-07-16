@@ -73,3 +73,8 @@ iframe {
 .back-link a:hover {
   background-color: #3a9ac0;
 }
+
+a {
+  color: #ee2c0a;
+  text-decoration: none;
+}
