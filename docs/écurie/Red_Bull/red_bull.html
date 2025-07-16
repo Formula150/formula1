@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Red Bull Racing</title>
+  <link rel="stylesheet" href="red_bull.css">
+  <link rel="icon" type="image/png" href="../logo_f1.png">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <div class="redbull-container">
+    <header>
+      <h1>Red Bull Racing</h1>
+      <p class="slogan">"Gives You Wings" – la vitesse par excellence</p>
+    </header>
+
+    <section class="image-section">
+      <img src="équipe_red_bull.jpg" alt="Red Bull Racing Team">
+    </section>
+
+    <section>
+      <h2>Présentation</h2>
+      <p>Red Bull Racing est une écurie de Formule 1 autrichienne fondée en 2005. Avec un esprit jeune, agressif et technologique, elle s’est rapidement imposée comme l’une des meilleures équipes du championnat. Elle est basée à Milton Keynes, au Royaume-Uni, et utilise désormais ses propres moteurs Red Bull Powertrains.</p>
+    </section>
+
+    <section>
+      <h2>Fiche technique</h2>
+      <ul>
+        <li>🇦🇹 Nationalité : Autrichienne</li>
+        <li>📍 Siège : Milton Keynes, Royaume-Uni</li>
+        <li>🛠️ Moteur : Red Bull Powertrains / Honda</li>
+        <li>🏆 Titres constructeurs : 6</li>
+        <li>🥇 Titres pilotes : 7</li>
+        <li>🧑‍🤝‍🧑 Pilotes 2024 : Max Verstappen, Sergio Pérez</li>
+      </ul>
+    </section>
+
+    <section class="gallery">
+      <img src="voiture_red_bull.jpg" alt="Red Bull F1 Car">
+    </section>
+
+     <div class="back-link">
+  <a id="retourBtn" href="../../index.html">← Retour au Grand Prix</a>
+</div>
+
+    <script>
+  const params = new URLSearchParams(window.location.search);
+  const retour = params.get("retour");
+
+  const retourBtn = document.getElementById("retourBtn");
+
+  if (retour === "australie") {
+    retourBtn.href = "../../gp/gp_australie/resultataustralie.html";
+    retourBtn.textContent = "← Retour au GP Australie";
+  } else if (retour === "chine") {
+    retourBtn.href = "../../gp/gp_chine/resultatchine.html";
+    retourBtn.textContent = "← Retour au GP Chine";
+  } else {
+    retourBtn.href = "../../index.html";
+    retourBtn.textContent = "← Retour à l'accueil";
+  }
+</script>
+  </div>
+</body>
+</html>

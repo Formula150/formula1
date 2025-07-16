@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Stake F1 Team Kick Sauber</title>
+  <link rel="stylesheet" href="stake.css">
+  <link rel="icon" type="image/png" href="../logo_f1.png">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <div class="stake-container">
+    <header>
+      <h1>Stake F1 Team Kick Sauber</h1>
+      <p class="slogan">La vitesse sous haute tension</p>
+    </header>
+
+    <section class="image-section">
+      <img src="équipe_stake.jpg" alt="Stake F1 Team">
+    </section>
+
+    <section>
+      <h2>Présentation</h2>
+      <p>Stake F1 Team Kick Sauber est la nouvelle identité de l’écurie Sauber pour la saison 2024, en partenariat avec la plateforme Stake. L’équipe suisse conserve sa base à Hinwil et se prépare à devenir l’écurie d’usine Audi en 2026. Elle mise sur la puissance, le marketing audacieux et l’innovation pour se démarquer.</p>
+    </section>
+
+    <section>
+      <h2>Fiche technique</h2>
+      <ul>
+        <li>🇨🇭 Nationalité : Suisse</li>
+        <li>📍 Siège : Hinwil, Suisse</li>
+        <li>🛠️ Moteur : Ferrari</li>
+        <li>🏁 Ancien nom : Alfa Romeo Racing</li>
+        <li>🧑‍🤝‍🧑 Pilotes 2024 : Valtteri Bottas, Zhou Guanyu</li>
+      </ul>
+    </section>
+
+    <section class="gallery">
+      <img src="voiture_stake.jpg" alt="Stake F1 Car">
+    </section>
+
+       <div class="back-link">
+  <a id="retourBtn" href="../../index.html">← Retour au Grand Prix</a>
+</div>
+
+    <script>
+  const params = new URLSearchParams(window.location.search);
+  const retour = params.get("retour");
+
+  const retourBtn = document.getElementById("retourBtn");
+
+  if (retour === "australie") {
+    retourBtn.href = "../../gp/gp_australie/resultataustralie.html";
+    retourBtn.textContent = "← Retour au GP Australie";
+  } else if (retour === "chine") {
+    retourBtn.href = "../../gp/gp_chine/resultatchine.html";
+    retourBtn.textContent = "← Retour au GP Chine";
+  } else {
+    retourBtn.href = "../../index.html";
+    retourBtn.textContent = "← Retour à l'accueil";
+  }
+</script>
+  </div>
+</body>
+</html>

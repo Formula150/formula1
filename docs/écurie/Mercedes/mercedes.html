@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Mercedes-AMG F1</title>
+  <link rel="stylesheet" href="mercedes.css">
+  <link rel="icon" type="image/png" href="../logo_f1.png">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <div class="mercedes-container">
+    <header>
+      <h1>Mercedes-AMG Petronas F1 Team</h1>
+      <p class="slogan">Précision. Puissance. Performance.</p>
+    </header>
+
+    <section class="image-section">
+      <img src="équipe_mercedes.jpg" alt="Mercedes F1 Team">
+    </section>
+
+    <section>
+      <h2>Présentation</h2>
+      <p>Mercedes-AMG Petronas F1 est une écurie allemande de Formule 1 basée à Brackley, au Royaume-Uni. Dominatrice dans l’ère hybride depuis 2014, elle a remporté de nombreux titres grâce à sa technologie avancée, ses moteurs puissants, et ses pilotes d'élite comme Lewis Hamilton.</p>
+    </section>
+
+    <section>
+      <h2>Fiche technique</h2>
+      <ul>
+        <li>🇩🇪 Nationalité : Allemande</li>
+        <li>📍 Siège : Brackley, Royaume-Uni</li>
+        <li>🛠️ Moteur : Mercedes-AMG</li>
+        <li>🏆 Titres constructeurs : 8</li>
+        <li>🥇 Titres pilotes : 9</li>
+        <li>🧑‍🤝‍🧑 Pilotes 2024 : Lewis Hamilton, Bryan Moreau</li>
+      </ul>
+    </section>
+
+    <section class="gallery">
+      <img src="voiture_mercedes.jpg" alt="Mercedes F1 Car">
+    </section>
+
+     <div class="back-link">
+  <a id="retourBtn" href="../../index.html">← Retour au Grand Prix</a>
+</div>
+
+    <script>
+  const params = new URLSearchParams(window.location.search);
+  const retour = params.get("retour");
+
+  const retourBtn = document.getElementById("retourBtn");
+
+  if (retour === "australie") {
+    retourBtn.href = "../../gp/gp_australie/resultataustralie.html";
+    retourBtn.textContent = "← Retour au GP Australie";
+  } else if (retour === "chine") {
+    retourBtn.href = "../../gp/gp_chine/resultatchine.html";
+    retourBtn.textContent = "← Retour au GP Chine";
+  } else {
+    retourBtn.href = "../../index.html";
+    retourBtn.textContent = "← Retour à l'accueil";
+  }
+</script>
+  </div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Visa Cash App RB F1 Team</title>
+  <link rel="stylesheet" href="visa.css">
+  <link rel="icon" type="image/png" href="../logo_f1.png">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <div class="rb-container">
+    <header>
+      <h1>Visa Cash App RB F1 Team</h1>
+      <p class="slogan">Nouvelle identité, mêmes ambitions</p>
+    </header>
+
+    <section class="image-section">
+      <img src="équipe_visa_cash_app.jpg" alt="Visa Cash App RB Team">
+    </section>
+
+    <section>
+      <h2>Présentation</h2>
+      <p>Visa Cash App RB F1 Team est la nouvelle identité de l’écurie anciennement connue sous le nom d’AlphaTauri (et Toro Rosso avant cela). En 2024, l'équipe adopte une image de marque dynamique avec un style technologique et urbain. Basée à Faenza, elle conserve un lien étroit avec Red Bull tout en affirmant son autonomie.</p>
+    </section>
+
+    <section>
+      <h2>Fiche technique</h2>
+      <ul>
+        <li>🇮🇹 Nationalité : Italienne</li>
+        <li>📍 Siège : Faenza, Italie</li>
+        <li>🛠️ Moteur : Honda (Red Bull Powertrains)</li>
+        <li>🏁 Ancien nom : AlphaTauri / Toro Rosso</li>
+        <li>🧑‍🤝‍🧑 Pilotes 2024 : Daniel Ricciardo, Yuki Tsunoda</li>
+      </ul>
+    </section>
+
+    <section class="gallery">
+      <img src="voiture_visa_cash_app.jpg" alt="Visa Cash App RB F1 Car">
+    </section>
+
+       <div class="back-link">
+  <a id="retourBtn" href="../../index.html">← Retour au Grand Prix</a>
+</div>
+
+    <script>
+  const params = new URLSearchParams(window.location.search);
+  const retour = params.get("retour");
+
+  const retourBtn = document.getElementById("retourBtn");
+
+  if (retour === "australie") {
+    retourBtn.href = "../../gp/gp_australie/resultataustralie.html";
+    retourBtn.textContent = "← Retour au GP Australie";
+  } else if (retour === "chine") {
+    retourBtn.href = "../../gp/gp_chine/resultatchine.html";
+    retourBtn.textContent = "← Retour au GP Chine";
+  } else {
+    retourBtn.href = "../../index.html";
+    retourBtn.textContent = "← Retour à l'accueil";
+  }
+</script>
+  </div>
+</body>
+</html>

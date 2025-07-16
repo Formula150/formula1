@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Aston Martin F1 Team</title>
+  <link rel="stylesheet" href="aston.css">
+  <link rel="icon" type="image/png" href="../logo_f1.png">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <div class="aston-container">
+    <header>
+      <h1>Aston Martin Aramco F1 Team</h1>
+      <p class="slogan">L'élégance britannique en piste</p>
+    </header>
+
+    <section class="image-section">
+      <img src="équipe_aston.jpg" alt="Aston Martin F1 Team">
+    </section>
+
+    <section>
+      <h2>Présentation</h2>
+      <p>Aston Martin F1 Team, relancée officiellement en 2021, est une écurie britannique de Formule 1 issue de la transformation de Racing Point. Alliant style, performance et technologie, elle incarne l’héritage d’Aston Martin sur les circuits modernes. Basée à Silverstone, elle progresse rapidement vers les sommets de la grille.</p>
+    </section>
+
+    <section>
+      <h2>Fiche technique</h2>
+      <ul>
+        <li>🇬🇧 Nationalité : Britannique</li>
+        <li>📍 Siège : Silverstone, Royaume-Uni</li>
+        <li>🛠️ Moteur : Mercedes</li>
+        <li>🏎️ Ancien nom : Racing Point</li>
+        <li>🧑‍🤝‍🧑 Pilotes 2024 : Noah Thomine, Lance Stroll</li>
+      </ul>
+    </section>
+
+    <section class="gallery">
+      <img src="voiture_aston.jpg" alt="Aston Martin F1 Car">
+    </section>
+
+       <div class="back-link">
+  <a id="retourBtn" href="../../index.html">← Retour au Grand Prix</a>
+</div>
+
+    <script>
+  const params = new URLSearchParams(window.location.search);
+  const retour = params.get("retour");
+
+  const retourBtn = document.getElementById("retourBtn");
+
+  if (retour === "australie") {
+    retourBtn.href = "../../gp/gp_australie/resultataustralie.html";
+    retourBtn.textContent = "← Retour au GP Australie";
+  } else if (retour === "chine") {
+    retourBtn.href = "../../gp/gp_chine/resultatchine.html";
+    retourBtn.textContent = "← Retour au GP Chine";
+  } else {
+    retourBtn.href = "../../index.html";
+    retourBtn.textContent = "← Retour à l'accueil";
+  }
+</script>
+  </div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Haas F1 Team</title>
+  <link rel="stylesheet" href="haas.css">
+  <link rel="icon" type="image/png" href="../logo_f1.png">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <div class="haas-container">
+    <header>
+      <h1>Haas F1 Team</h1>
+      <p class="slogan">L'efficacité américaine, l'ingénierie européenne</p>
+    </header>
+
+    <section class="image-section">
+      <img src="équipe_haas.jpg" alt="Haas F1 Team">
+    </section>
+
+    <section>
+      <h2>Présentation</h2>
+      <p>Fondée par Gene Haas, l’écurie Haas F1 Team a rejoint la grille de Formule 1 en 2016. Basée aux États-Unis et en Angleterre, elle est connue pour son efficacité et son association technique avec Ferrari. Haas mise sur la stabilité et l’optimisation de ressources pour progresser saison après saison.</p>
+    </section>
+
+    <section>
+      <h2>Fiche technique</h2>
+      <ul>
+        <li>🇺🇸 Nationalité : Américaine</li>
+        <li>📍 Siège : Kannapolis (États-Unis) / Banbury (UK)</li>
+        <li>🛠️ Moteur : Ferrari</li>
+        <li>🎯 Débuts en F1 : 2016</li>
+        <li>🧑‍🤝‍🧑 Pilotes 2024 : Kevin Magnussen, Nico Hülkenberg</li>
+      </ul>
+    </section>
+
+    <section class="gallery">
+      <img src="voiture_haas.jpg" alt="Haas F1 Car">
+    </section>
+
+      <div class="back-link">
+  <a id="retourBtn" href="../../index.html">← Retour au Grand Prix</a>
+</div>
+
+    <script>
+  const params = new URLSearchParams(window.location.search);
+  const retour = params.get("retour");
+
+  const retourBtn = document.getElementById("retourBtn");
+
+  if (retour === "australie") {
+    retourBtn.href = "../../gp/gp_australie/resultataustralie.html";
+    retourBtn.textContent = "← Retour au GP Australie";
+  } else if (retour === "chine") {
+    retourBtn.href = "../../gp/gp_chine/resultatchine.html";
+    retourBtn.textContent = "← Retour au GP Chine";
+  } else {
+    retourBtn.href = "../../index.html";
+    retourBtn.textContent = "← Retour à l'accueil";
+  }
+</script>
+  </div>
+</body>
+</html>

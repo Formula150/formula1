@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>McLaren F1 Team</title>
+  <link rel="stylesheet" href="mclaren.css">
+  <link rel="icon" type="image/png" href="../logo_f1.png">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <div class="mclaren-container">
+    <header>
+      <h1>McLaren Formula 1 Team</h1>
+      <p class="slogan">Innovation, vitesse, passion</p>
+    </header>
+
+    <section class="image-section">
+      <img src="équipe_mclaren.jpg" alt="McLaren F1 Team">
+    </section>
+
+    <section>
+      <h2>Présentation</h2>
+      <p>Fondée en 1963 par Bruce McLaren, l’écurie McLaren est l'une des plus historiques de la Formule 1. Elle a remporté de nombreux titres mondiaux avec des pilotes de légende comme Ayrton Senna, Alain Prost ou Lewis Hamilton. Aujourd'hui, McLaren mise sur la jeunesse, la technologie et la constance pour revenir aux avant-postes.</p>
+    </section>
+
+    <section>
+      <h2>Fiche technique</h2>
+      <ul>
+        <li>🇬🇧 Nationalité : Britannique</li>
+        <li>📍 Siège : Woking, Royaume-Uni</li>
+        <li>🛠️ Moteur : Mercedes</li>
+        <li>🏆 Titres constructeurs : 8</li>
+        <li>🥇 Titres pilotes : 12</li>
+        <li>🧑‍🤝‍🧑 Pilotes 2024 : Lando Norris, Oscar Piastri</li>
+      </ul>
+    </section>
+
+    <section class="gallery">
+      <img src="voiture_mclaren.jpg" alt="McLaren F1 Car">
+    </section>
+
+     <div class="back-link">
+  <a id="retourBtn" href="../../index.html">← Retour au Grand Prix</a>
+</div>
+
+    <script>
+  const params = new URLSearchParams(window.location.search);
+  const retour = params.get("retour");
+
+  const retourBtn = document.getElementById("retourBtn");
+
+  if (retour === "australie") {
+    retourBtn.href = "../../gp/gp_australie/resultataustralie.html";
+    retourBtn.textContent = "← Retour au GP Australie";
+  } else if (retour === "chine") {
+    retourBtn.href = "../../gp/gp_chine/resultatchine.html";
+    retourBtn.textContent = "← Retour au GP Chine";
+  } else {
+    retourBtn.href = "../../index.html";
+    retourBtn.textContent = "← Retour à l'accueil";
+  }
+</script>
+  </div>
+</body>
+</html>

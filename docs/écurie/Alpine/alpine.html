@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Écurie Alpine</title>
+  <link rel="stylesheet" href="alpine.css">
+  <link rel="icon" type="image/png" href="../logo_f1.png">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Écurie Alpine F1 Team</h1>
+
+    <div class="image-wrapper">
+      <img src="équipe_alpine.jpg" alt="Alpine F1 Team">
+    </div>
+
+    <section>
+      <h2>Présentation</h2>
+      <p>Alpine F1 Team est une écurie française de Formule 1 engagée dans le championnat du monde depuis 2021. Elle succède à Renault F1 Team et représente la marque sportive d'automobiles Alpine, filiale du groupe Renault. Basée à Enstone (Angleterre) et Viry-Châtillon (France), l’équipe combine innovation technique et passion pour la course.</p>
+    </section>
+
+    <section>
+      <h2>Informations principales</h2>
+      <ul>
+        <li>🇫🇷 Nationalité : Française</li>
+        <li>🏁 Ancien nom : Renault F1 Team</li>
+        <li>📍 Siège : Enstone (UK) / Viry-Châtillon (FR)</li>
+        <li>🚗 Moteur : Renault</li>
+        <li>👨‍✈️ Directeur : Bruno Famin (par intérim)</li>
+        <li>🧑‍🤝‍🧑 Pilotes 2024 : Pierre Gasly, Gabriel Tesson</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Galerie</h2>
+      <img src="voiture_alpine.webp" alt="Voiture Alpine F1" style="width: 100%; max-width: 600px; margin: 20px auto; display: block;">
+    </section>
+
+     <div class="back-link">
+  <a id="retourBtn" href="../../index.html">← Retour au Grand Prix</a>
+</div>
+
+    <script>
+  const params = new URLSearchParams(window.location.search);
+  const retour = params.get("retour");
+
+  const retourBtn = document.getElementById("retourBtn");
+
+  if (retour === "australie") {
+    retourBtn.href = "../../gp/gp_australie/resultataustralie.html";
+    retourBtn.textContent = "← Retour au GP Australie";
+  } else if (retour === "chine") {
+    retourBtn.href = "../../gp/gp_chine/resultatchine.html";
+    retourBtn.textContent = "← Retour au GP Chine";
+  } else {
+    retourBtn.href = "../../index.html";
+    retourBtn.textContent = "← Retour à l'accueil";
+  }
+</script>
+  </div>
+</body>
+</html>
