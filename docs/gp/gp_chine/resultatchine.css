@@ -143,38 +143,63 @@ tr:nth-child(18) td {
 
 /* ----- RESPONSIVE DESIGN ----- */
 @media screen and (max-width: 768px) {
+  body {
+    padding: 20px;
+    background-size: cover;
+    background-position: center center;
+  }
+
   h1 {
     font-size: 2.5em;
+    margin-top: 0;
+    text-align: center;
   }
 
   .images-top {
     flex-direction: column;
     align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
   }
 
   .images-top img {
-    width: 90%;
-    max-height: 300px;
+    width: 95%;
+    height: auto;
+    max-height: none;
     border-radius: 10px;
-    box-shadow: 0 0 12px rgba(255, 0, 0, 0.5);
-    transition: transform 0.3s ease;
-  }
-
-  .images-top img:hover {
-    transform: scale(1.05);
+    box-shadow: 0 0 18px rgba(255, 255, 255, 0.6);
+    opacity: 1;
+    border: 2px solid white;
   }
 
   table {
     width: 100%;
-    font-size: 0.85em;
+    font-size: 0.9em;
+    overflow-x: auto;
   }
 
-  thead th,
-  tbody td {
+  th, td {
     padding: 6px;
   }
 
+  .home-btn-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .home-btn-text {
+    font-size: 1em;
+    text-align: center;
+  }
+
+  .home-btn {
+    width: 120px;
+    height: 60px;
+  }
+
   .home-btn-img {
-    height: 45px;
+    height: 100%;
+    width: 100%;
   }
 }
