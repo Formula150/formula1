@@ -139,3 +139,42 @@ tr:nth-child(18) td {
   vertical-align: middle;
   text-decoration: none;          /* retire le soulignement */
 }
+
+
+/* ----- RESPONSIVE DESIGN ----- */
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 2.5em;
+  }
+
+  .images-top {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .images-top img {
+    width: 90%;
+    max-height: 300px;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(255, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+  }
+
+  .images-top img:hover {
+    transform: scale(1.05);
+  }
+
+  table {
+    width: 100%;
+    font-size: 0.85em;
+  }
+
+  thead th,
+  tbody td {
+    padding: 6px;
+  }
+
+  .home-btn-img {
+    height: 45px;
+  }
+}
