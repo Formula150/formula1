@@ -142,63 +142,52 @@ tr:nth-child(2) td {
 
 /* ----- ADAPTATION POUR TÉLÉPHONE ----- */
 @media screen and (max-width: 768px) {
-  body {
-    padding: 20px;
-    background-size: cover;
-    background-position: center center;
-  }
-
-  h1 {
-    font-size: 2.5em;
-    margin-top: 0;
-    text-align: center;
-  }
-
   .images-top {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 10px;
+    justify-items: center;
+    align-items: end;
     margin-bottom: 30px;
   }
 
+  /* Image du 1er (centre), la plus grande et en haut */
+  .images-top img:nth-child(2) {
+    grid-column: 2 / 3;    /* centre */
+    grid-row: 1 / 2;       /* ligne du haut */
+    height: 220px;         /* plus grande */
+    z-index: 3;
+  }
+
+  /* Image du 2e (gauche), plus petite et en bas */
+  .images-top img:nth-child(1) {
+    grid-column: 1 / 2;    /* gauche */
+    grid-row: 2 / 3;       /* ligne du bas */
+    height: 160px;
+    z-index: 2;
+  }
+
+  /* Image du 3e (droite), plus petite et en bas */
+  .images-top img:nth-child(3) {
+    grid-column: 3 / 4;    /* droite */
+    grid-row: 2 / 3;       /* ligne du bas */
+    height: 160px;
+    z-index: 2;
+  }
+
+  /* Style commun aux images */
   .images-top img {
-    width: 95%;
-    height: auto;
-    max-height: none;
     border-radius: 10px;
     box-shadow: 0 0 18px rgba(255, 255, 255, 0.6);
     opacity: 1;
     border: 2px solid white;
+    transition: transform 0.3s ease;
   }
 
-  table {
-    width: 100%;
-    font-size: 0.9em;
-    overflow-x: auto;
-  }
-
-  th, td {
-    padding: 6px;
-  }
-
-  .home-btn-row {
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .home-btn-text {
-    font-size: 1em;
-    text-align: center;
-  }
-
-  .home-btn {
-    width: 120px;
-    height: 60px;
-  }
-
-  .home-btn-img {
-    height: 100%;
-    width: 100%;
+  /* Effet au survol (optionnel) */
+  .images-top img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.9);
   }
 }
