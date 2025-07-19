@@ -189,4 +189,33 @@ tr:nth-child(2) td {
     transform: scale(1.05);
     box-shadow: 0 0 25px rgba(255, 255, 255, 0.9);
   }
+
+   body {
+    background-size: cover;
+    background-position: center center;
+    padding: 60px 20px;  /* moins de padding pour mobile */
+    margin: 0;
+  }
+
+  h1 {
+    font-size: 3em;           /* taille plus raisonnable */
+    margin-top: 10px;         /* supprime le margin négatif */
+    text-shadow: 0 0 4px #fff, 0 0 8px #f00, 0 0 12px #f00;
+  }
+
+   table {
+    width: 100%;             /* occupe toute la largeur */
+    height: auto;            /* hauteur automatique */
+    font-size: 0.8em;        /* un peu plus petit */
+    margin: 20px auto;       /* marges plus petites */
+  }
+
+  th, td {
+    padding: 6px 8px;        /* réduit le padding */
+    font-size: 0.75em;
+  }
+
+  caption {
+    font-size: 1em;          /* un peu plus petit */
+  }
 }
