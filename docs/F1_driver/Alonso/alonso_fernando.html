@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Fernando Alonso</title>
+  <link rel="stylesheet" href="alonso.css"> <!-- Utilise le même CSS pour Aston Martin -->
+  <link rel="icon" type="image/png" href="../logo_f1.png">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Fernando Alonso</h1>
+
+    <div class="image-wrapper">
+      <img src="alonso.jpg" alt="Fernando Alonso">
+    </div>
+
+    <section>
+      <h2>Biographie</h2>
+      <p>Fernando Alonso est un pilote de Formule 1 de nationalité Espagnole, né le 29 juillet 1981. Double champion du monde, il a débuté en F1 en 2001 (Australie) et pilote actuellement pour l’écurie Aston Martin.</p>
+    </section>
+
+    <section>
+      <h2>Faits marquants</h2>
+      <ul>
+        <li>🌍 Nationalité : Espagnole</li>
+        <li>🎂 Né le : 29 juillet 1981</li>
+        <li>🏁 Débuts en F1 : 2001 (Australie)</li>
+        <li>🏆 Victoires : 32</li>
+        <li>🥇 Titres mondiaux : 2</li>
+        <li>🚗 Écurie actuelle : Aston Martin</li>
+      </ul>
+    </section>
+
+    <div class="back-link">
+      <a id="retourBtn" href="../../index.html">← Retour au Grand Prix</a>
+    </div>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const retour = params.get("retour");
+
+      const retourBtn = document.getElementById("retourBtn");
+
+      if (retour === "australie") {
+        retourBtn.href = "../../gp/gp_australie/resultataustralie.html";
+        retourBtn.textContent = "← Retour au GP Australie";
+      } else if (retour === "chine") {
+        retourBtn.href = "../../gp/gp_chine/resultatchine.html";
+        retourBtn.textContent = "← Retour au GP Chine";
+      } else if (retour === "japon") {
+        retourBtn.href = "../../gp/gp_japon/resultatjapon.html";
+        retourBtn.textContent = "← Retour au GP Japon";
+      } else {
+        retourBtn.href = "../../index.html";
+        retourBtn.textContent = "← Retour à l'accueil";
+      }
+    </script>
+  </div>
+</body>
+</html>
