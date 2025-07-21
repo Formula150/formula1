@@ -177,23 +177,64 @@ tbody tr:nth-child(3) td { background-color: #cd7f32; color: black; font-weight:
 /* ----- RESPONSIVE ----- */
 @media screen and (max-width: 768px) {
   h1 {
-    font-size: 2.5em;
+    font-size: 2em;
+  }
+
+  h1::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #ff0000;
+    margin: 10px auto 0;
+    animation: slideBar 2s infinite alternate;
+  }
+
+  @keyframes slideBar {
+    0% { width: 40px; background-color: #ff0000; }
+    100% { width: 80px; background-color: #ff6666; }
   }
 
   .images-top {
     flex-direction: row;
     justify-content: center;
+    align-items: flex-end;
     gap: 10px;
+    margin-bottom: 30px;
   }
 
   .images-top img {
-    max-width: 28vw;
-    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    border: 2px solid #fff;
+    transition: none;
+  }
+
+  .images-top img:hover {
+    transform: none;
+  }
+
+  .images-top img:nth-child(1) {
+    max-height: 130px;
+    transform: translateY(15px);
+    border-color: silver;
+  }
+
+  .images-top img:nth-child(2) {
+    max-height: 160px;
+    border-color: gold;
+  }
+
+  .images-top img:nth-child(3) {
+    max-height: 120px;
+    transform: translateY(25px);
+    border-color: #cd7f32;
   }
 
   table {
     width: 100%;
-    font-size: 0.85em;
+    font-size: 0.8em;
+    margin-top: 20px;
   }
 
   thead th,
@@ -202,11 +243,25 @@ tbody tr:nth-child(3) td { background-color: #cd7f32; color: black; font-weight:
   }
 
   .home-btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 10px 20px;
     font-size: 1em;
-    padding: 10px 16px;
+    color: white;
+    background: linear-gradient(135deg, #ff0000, #8b0000);
+    border-radius: 25px;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(255, 0, 0, 0.5);
+    text-align: center;
+  }
+
+  .home-btn:hover {
+    background: linear-gradient(135deg, #b30000, #660000);
+    transform: translateY(-2px);
   }
 
   .home-btn::before {
+    content: "← ";
     font-size: 1.2em;
   }
 }
