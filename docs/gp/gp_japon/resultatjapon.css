@@ -4,43 +4,104 @@ body {
   font-family: 'Montserrat', sans-serif;
   color: #fff;
   padding: 20px;
-
   background: linear-gradient(to bottom, #8b0000, #1a1a1a);
   background-attachment: fixed;
 }
 
-
-
-
-
 /* ----- TITRE ----- */
 h1 {
+  position: relative;
   text-align: center;
   color: #ffffff;
   font-size: 4em;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
 }
 
-/* ----- IMAGES PODIUM ----- */
+h1::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, #ff0000, #8b0000);
+  margin: 10px auto 0;
+  border-radius: 2px;
+  animation: slideLine 2s infinite alternate;
+}
+
+@keyframes slideLine {
+  0% { transform: scaleX(1); }
+  100% { transform: scaleX(1.5); }
+}
+
+/* ----- PODIUM ----- */
+/* ----- PODIUM ----- */
 .images-top {
   display: flex;
   justify-content: center;
+  align-items: flex-end;
   gap: 20px;
   flex-wrap: wrap;
-  margin-bottom: 30px;
+  margin-bottom: 50px; /* Plus d'espace sous les images */
 }
 
 .images-top img {
   border-radius: 12px;
-  max-height: 340px;
   width: auto;
+  object-fit: cover;
   box-shadow: 0 0 16px rgba(255, 255, 255, 0.2);
   transition: transform 0.3s ease;
 }
-.images-top img:hover {
-  transform: scale(1.03);
+
+/* Ordre : 2e, 1er, 3e pour centrer le 1er */
+.images-top img:nth-child(1) {
+  transform: translateY(20px);
+  border: 4px solid silver;
+  max-height: 300px; /* Taille moyenne */
 }
+
+.images-top img:nth-child(2) {
+  transform: scale(1.1);
+  border: 4px solid gold;
+  max-height: 340px; /* Plus grande (1er) */
+}
+
+.images-top img:nth-child(3) {
+  transform: translateY(30px);
+  border: 4px solid #cd7f32;
+  max-height: 280px; /* Plus petite */
+}
+
+
+
+/* ----- BOUTON ACCUEIL ----- */
+.home-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  font-size: 1.1em;
+  color: white;
+  background: linear-gradient(135deg, #ff0000, #8b0000);
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(255, 0, 0, 0.5);
+  transition: all 0.3s ease;
+  margin-top: 40px; /* Espace au-dessus du bouton */
+}
+
+.home-btn:hover {
+  background: linear-gradient(135deg, #b30000, #660000);
+  transform: translateY(-2px);
+}
+
+.home-btn::before {
+  content: "←";
+  font-size: 1.4em;
+}
+
 
 /* ----- TABLEAU CLASSEMENT ----- */
 table {
@@ -48,7 +109,6 @@ table {
   margin: auto;
   border-collapse: collapse;
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
-  overflow-x: auto;
 }
 
 thead th {
@@ -82,56 +142,53 @@ tbody tr:nth-child(1) td { background-color: gold; color: black; font-weight: bo
 tbody tr:nth-child(2) td { background-color: silver; color: black; font-weight: bold; }
 tbody tr:nth-child(3) td { background-color: #cd7f32; color: black; font-weight: bold; }
 
-
 /* ----- BOUTON ACCUEIL ----- */
 .home-btn-row {
   text-align: center;
   margin-top: 50px;
 }
 
-.home-btn-text {
+.home-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  font-size: 1.1em;
   color: white;
-  font-size: 1.2em;
-  margin-bottom: 10px;
-}
-
-.home-btn-container button {
-  background-color: transparent;
+  background: linear-gradient(135deg, #ff0000, #8b0000);
   border: none;
+  border-radius: 30px;
+  text-decoration: none;
   cursor: pointer;
+  box-shadow: 0 4px 12px rgba(255, 0, 0, 0.5);
+  transition: all 0.3s ease;
 }
 
-.home-btn-img {
-  height: 60px;
-  border-radius: 10px;
-  transition: transform 0.3s ease;
-  box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
-}
-.home-btn-img:hover {
-  transform: scale(1.1);
+.home-btn:hover {
+  background: linear-gradient(135deg, #b30000, #660000);
+  transform: translateY(-2px);
 }
 
-/* ----- RESPONSIVE DESIGN ----- */
+.home-btn::before {
+  content: "←";
+  font-size: 1.4em;
+}
+
+/* ----- RESPONSIVE ----- */
 @media screen and (max-width: 768px) {
   h1 {
     font-size: 2.5em;
   }
 
   .images-top {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
   }
 
   .images-top img {
-    width: 90%;
-    max-height: 300px;
-    border-radius: 10px;
-    box-shadow: 0 0 12px rgba(255, 0, 0, 0.5);
-    transition: transform 0.3s ease;
-  }
-
-  .images-top img:hover {
-    transform: scale(1.05);
+    max-width: 28vw;
+    height: auto;
   }
 
   table {
@@ -144,7 +201,12 @@ tbody tr:nth-child(3) td { background-color: #cd7f32; color: black; font-weight:
     padding: 6px;
   }
 
-  .home-btn-img {
-    height: 45px;
+  .home-btn {
+    font-size: 1em;
+    padding: 10px 16px;
+  }
+
+  .home-btn::before {
+    font-size: 1.2em;
   }
 }
