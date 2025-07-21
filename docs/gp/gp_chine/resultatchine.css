@@ -152,10 +152,10 @@ tbody tr.best-lap td {
 
 /* ----- RESPONSIVE MOBILE ----- */
 @media screen and (max-width: 768px) {
+  /* TITRE */
   h1 {
     font-size: 2em;
   }
-
   h1::after {
     content: "";
     display: block;
@@ -165,64 +165,73 @@ tbody tr.best-lap td {
     margin: 10px auto 0;
     animation: slideBar 2s infinite alternate;
   }
-
   @keyframes slideBar {
     0% { width: 40px; background-color: #ff0000; }
     100% { width: 80px; background-color: #ff6666; }
   }
 
+  /* PODIUM - images */
   .images-top {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    gap: 8px;
+    gap: 15px;
     margin-bottom: 30px;
-    position: relative;
+    flex-wrap: nowrap; /* pour garder les images sur une ligne */
   }
 
   .images-top img {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-    border: 2px solid #fff;
+    border: 3px solid #fff;
     transition: none;
-    margin: 0;
-    flex-shrink: 0;
+    object-fit: cover;
+    flex-shrink: 0; /* évite que l’image rétrécisse */
   }
 
-  .images-top img:hover {
-    transform: none;
-  }
-
-    .images-top img:nth-child(1) {
+  /* 2e place à gauche */
+  .images-top img:nth-child(1) {
     max-height: 120px;
-    transform: translateY(20px);
     border-color: silver;
+    transform: translateY(15px);
+    width: auto;
   }
 
+  /* 1re place au centre */
   .images-top img:nth-child(2) {
     max-height: 150px;
-    transform: translateY(0);
     border-color: gold;
+    transform: translateY(0);
+    width: auto;
   }
 
+  /* 3e place à droite */
   .images-top img:nth-child(3) {
     max-height: 110px;
-    transform: translateY(25px);
     border-color: #cd7f32;
+    transform: translateY(20px);
+    width: auto;
   }
 
-
+  /* TABLEAU */
   table {
     width: 100%;
     font-size: 0.8em;
     margin-top: 30px;
   }
-
   thead th,
   tbody td {
     padding: 6px;
   }
 
+  /* Meilleur tour sur mobile */
+  tbody tr.best-lap td {
+    background-color: #bc88f0 !important;  /* bande violette pleine largeur */
+    color: white !important;
+    font-weight: bold;
+  }
+
+  /* BOUTON ACCUEIL */
   .home-btn {
     display: block;
     width: fit-content;
