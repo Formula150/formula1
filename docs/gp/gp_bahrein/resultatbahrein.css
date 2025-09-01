@@ -151,18 +151,12 @@ tbody tr:nth-child(3) td {
   font-weight: bold;
 }
 
-/* ----- MEILLEUR TOUR : Bande violette sur la 1ère cellule ----- */
-/* S’applique uniquement sur la ligne avec la classe best-lap */
-tbody tr.best-lap td:first-child::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 6px;
-  background-color: #bc88f0; /* violet */
-  border-radius: 3px 0 0 3px;
-  z-index: 1;
+/* Meilleur tour – bande violette à gauche */
+/* Ligne complète pour le meilleur tour */
+tbody tr.best-lap td {
+  background-color: #bc88f0 !important;  /* Bande violette */
+  color: white !important;               /* Texte en blanc pour contraste */
+  font-weight: bold;
 }
 
 /* S’assurer que si la ligne est la 2e avec meilleur tour, on garde argenté */
