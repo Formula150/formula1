@@ -224,7 +224,7 @@ tbody tr.best-lap:nth-child(2) td {
   }
 
   .images-top img:nth-child(3) {
-    max-height: 120px;
+    max-height: 100px;
     transform: translateY(25px);
     border-color: #cd7f32;
   }
