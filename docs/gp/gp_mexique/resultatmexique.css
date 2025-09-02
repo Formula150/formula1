@@ -1,84 +1,94 @@
-body{
-    background-image: url(fond_gp_chine.jpg);
-    background-repeat: no-repeat;
-    background-size: 105% 105%;                        /* Allonge l'image de fond horizontalement et verticalement */
-    /*background-size: cover; */                         /* utilise 'cover' pour couvrir tout l'écran */
-    /*background-position: center -50px; */              /* Centrage de l'image et décale l'image de fond vers le bas */
-    /* background-attachment: fixed;*/                 /* fixe l'image de fond lors du defilement */
-    font-family: Arial, sans-serif;       
-    margin: 20px;
-    padding: 150px;                                    /* Pas de padding pour éviter les marges internes */
-}
-
-h1{
-    text-align: center;
-    color: rgb(196, 9, 9);
-    text-decoration: underline;
-    font-size: 8em;
-    margin-top: -55px;                                 /* Diminue la distance entre le haut de la page et h1 */
-    text-shadow: 0 0 8px #fff, 0 0 16px #f00, 0 0 24px #f00;
-}
-
-table {
-  width: 75%;
-  height: 300px;
-  border-collapse: collapse;
-  box-shadow: 0 0 10px #d8d1d1;
-  font-size: 1em;
-  margin: 40px auto;
-  padding: 8px 32px;
-}
-caption {
-  caption-side: top;
-  font-weight: bold;
-  font-size: 1.2em;
-  margin-bottom: 10px;
-}
-
-th, td {
-  border: 1px solid #333; 
-  background-color: rgba(216, 209, 209, 0.8);     /* le 0.8 regle la transparence */
-  padding: 8px 12px;
-  font-size: 1em;
+/* ----- STYLE GLOBAL ----- */
+body {
+  margin: 0;
+  padding: 40px 20px;
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(to bottom, #8b0000, #1a1a1a);
+  background-attachment: fixed;
+  color: white;
   text-align: center;
-  color: #000000;                                                /* Texte en noir */
 }
 
-th {
-  background-color: #d8d1d1;
+/* ----- CONTENEUR PRINCIPAL ----- */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px 20px;
 }
 
-tr:nth-child(even) td {
-  background-color: #d8d1d1;
-}
-
-.images-top {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;                                         /* Aligne le bas des images */
-  gap: 20px;
+/* ----- TITRE ----- */
+h1 {
+  font-size: 3em;
   margin-bottom: 20px;
+  color: #fff;
+  text-shadow: 0 0 10px #ff0000, 0 0 20px #8b0000;
+  position: relative;
 }
 
-.images-top img {
-  border-radius: 8px;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.15);
-  background: transparent;                                     /* Bordure (fond) transparent */
-  padding: 0px;
-  border: 2px solid transparent;          /* Bordure transparente */
-  opacity: 0.95;                           /* Images un peu transparentes */
+h1::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  margin: 15px auto 0;
+  background: linear-gradient(to right, #ff0000, #8b0000);
+  border-radius: 2px;
+  animation: pulse 1.5s infinite alternate;
 }
 
-.images-top img:nth-child(1) {     /* augmente la taille de l'image bryan */
-  height: 410px;
-}
-.images-top img:nth-child(2) {     /* augmente la taille de l'image gabriel */
-  height: 500px;
-}
-.images-top img:nth-child(3) {     /* augmente la taille de l'image noah */
-  height: 370px;
+/* Animation de la barre */
+@keyframes pulse {
+  from { transform: scaleX(1); opacity: 0.7; }
+  to { transform: scaleX(1.5); opacity: 1; }
 }
 
-tr:nth-child(18) td {
-  background-color: rgb(175, 17, 175);      /* surligne la ligne numero 3 */
+/* ----- TEXTE INFO ----- */
+p {
+  font-size: 1.3em;
+  margin-top: 20px;
+  color: #e0e0e0;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
+}
+
+/* ----- BOUTON RETOUR ----- */
+.home-btn {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 12px 24px;
+  font-size: 1.1em;
+  color: white;
+  background: linear-gradient(135deg, #ff0000, #8b0000);
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(255, 0, 0, 0.5);
+  transition: all 0.3s ease;
+}
+
+.home-btn:hover {
+  background: linear-gradient(135deg, #b30000, #660000);
+  transform: translateY(-2px);
+}
+
+.home-btn::before {
+  content: "← ";
+  font-size: 1.4em;
+}
+
+/* ----- RESPONSIVE ----- */
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 2.2em;
+  }
+
+  p {
+    font-size: 1.1em;
+  }
+
+  .home-btn {
+    padding: 10px 20px;
+    font-size: 1em;
+  }
 }
