@@ -4,190 +4,132 @@
   <meta charset="utf-8">
   <title>F1 Saison 2024</title>
   <link rel="stylesheet" href="projet.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="logo_f1.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
 
-  <div class="top-bar">
+  <!-- Barre supérieure -->
+  <header class="top-bar">
     <img src="logo_fia.jpg" alt="Logo FIA" class="top-bar-img">
-    <span class="top-bar-vertical"></span>
-    <span class="top-bar-text"> Saison 2024</span>
-    <span class="top-bar-right">
+    <span class="top-bar-text">Saison 2024</span>
+    <nav class="top-bar-links">
       <a href="https://f1store.formula1.com/fr/">Magasin</a>
-      <span class="top-bar-vertical"></span>
       <a href="https://www.f1authentics.com/">Authentique</a>
-      <span class="top-bar-vertical"></span>
-      <a href="https://f1tv.formula1.com/">
-        <button type="button" class="f1_tv_btn">
-          <img src="logo_f1_2.png" alt="f1-tv">
-          <span class="f1_tv_text">F1 TV</span>
-        </button>
+      <a href="https://f1tv.formula1.com/" class="btn-f1tv">
+        <img src="logo_f1_2.png" alt="f1-tv">
+        <span>F1 TV</span>
       </a>
-    </span>
-  </div>
+    </nav>
+  </header>
 
-  <div class="banniere">
-    <div class="header-container">
-      <img src="logo_f1_3.png" alt="Logo F1" class="banniere-img">
-      <div class="menu-container">
-        <span class="menu-trigger" onclick="toggleMenu()">Grand Prix</span>
-        <div class="menu-list" id="gp-dropdown">
-          <ul>
-            <li><a href="gp/gp_australie/resultataustralie.html">Australie</a></li>
-            <li><a href="gp/gp_chine/resultatchine.html">Chine</a></li>
-            <li><a href="gp/gp_japon/resultatjapon.html">Japon</a></li>
-            <li><a href="gp/gp_bahrein/resultatbahrein.html">Bahreïn</a></li>
-            <li><a href="gp/gp_arabie_saoudite/resultatarabiesaoudite.html">Arabie saoudite</a></li>
-            <li><a href="gp/gp_miami/resultatmiami.html">Miami</a></li>
-            <li><a href="gp/gp_italie_imola/resultatitalieimola.html">Italie (Imola)</a></li>
-            <li><a href="gp/gp_monaco/resultatmonaco.html">Monaco</a></li>
-            <li><a href="gp/gp_espagne/resultatespagne.html">Espagne</a></li>
-            <li><a href="gp/gp_canada/resultatcanada.html">Canada</a></li>
-            <li><a href="gp/gp_autriche/resultatautriche.html">Autriche</a></li>
-            <li><a href="gp/gp_grande_bretagne/resultatgrandebretagne.html">Grande Bretagne</a></li>
-            <li><a href="gp/gp_belgique/resultatbelgique.html">Belgique</a></li>
-            <li><a href="gp/gp_hongrie/resultathongrie.html">Hongrie</a></li>
-            <li><a href="gp/gp_pays_bas/resultatpaysbas.html">Pays Bas</a></li>
-            <li><a href="gp/gp_italie_monza/resultatitaliemonza.html">Italie (Monza)</a></li>
-            <li><a href="gp/gp_azerbaidjan/resultatazerbaidjan.html">Azerbaïdjan</a></li>
-            <li><a href="gp/gp_singapour/resultatsingapour.html">Singapour</a></li>
-            <li><a href="gp/gp_etats_unis/resultatetatsunis.html">Etats Unis</a></li>
-            <li><a href="gp/gp_bresil/resultatbresil.html">Brésil</a></li>
-            <li><a href="gp/gp_las_vegas/resultatlasvegas.html">Las Vegas</a></li>
-            <li><a href="gp/gp_qatar/resultatqatar.html">Qatar</a></li>
-            <li><a href="gp/gp_abu_dhabi/resultatabudhabi.html">Abu dhabi</a></li>
-          </ul>
-        </div>
+  <!-- Menu principal -->
+  <div class="navbar">
+    <div class="dropdown">
+      <button class="menu-trigger">Grand Prix ▾</button>
+      <div class="menu-list">
+        <a href="gp/gp_australie/resultataustralie.html">Australie</a>
+        <a href="gp/gp_chine/resultatchine.html">Chine</a>
+        <a href="gp/gp_japon/resultatjapon.html">Japon</a>
+        <a href="gp/gp_bahrein/resultatbahrein.html">Bahreïn</a>
+        <a href="gp/gp_arabie_saoudite/resultatarabiesaoudite.html">Arabie saoudite</a>
+        <a href="gp/gp_miami/resultatmiami.html">Miami</a>
+        <a href="gp/gp_italie_imola/resultatitalieimola.html">Italie (Imola)</a>
+        <a href="gp/gp_monaco/resultatmonaco.html">Monaco</a>
+        <a href="gp/gp_espagne/resultatespagne.html">Espagne</a>
+        <a href="gp/gp_canada/resultatcanada.html">Canada</a>
+        <a href="gp/gp_autriche/resultatautriche.html">Autriche</a>
+        <a href="gp/gp_grande_bretagne/resultatgrandebretagne.html">Grande Bretagne</a>
+        <a href="gp/gp_belgique/resultatbelgique.html">Belgique</a>
+        <a href="gp/gp_hongrie/resultathongrie.html">Hongrie</a>
+        <a href="gp/gp_pays_bas/resultatpaysbas.html">Pays Bas</a>
+        <a href="gp/gp_italie_monza/resultatitaliemonza.html">Italie (Monza)</a>
+        <a href="gp/gp_azerbaidjan/resultatazerbaidjan.html">Azerbaïdjan</a>
+        <a href="gp/gp_singapour/resultatsingapour.html">Singapour</a>
+        <a href="gp/gp_etats_unis/resultatetatsunis.html">États-Unis</a>
+        <a href="gp/gp_bresil/resultatbresil.html">Brésil</a>
+        <a href="gp/gp_las_vegas/resultatlasvegas.html">Las Vegas</a>
+        <a href="gp/gp_qatar/resultatqatar.html">Qatar</a>
+        <a href="gp/gp_abu_dhabi/resultatabudhabi.html">Abu Dhabi</a>
       </div>
-      <div class="menu-container2">
-        <span class="menu-trigger2" onclick="toggleMenu2()">Pilotes</span>
-        <div class="menu-list2" id="pilotes-dropdown">
-          <ul>
-            <li><a href="F1_driver/Albon/albon_alexander.html">Alexander Albon</a></li>
-            <li><a href="F1_driver/Alonso/alonso_fernando.html">Fernando Alonso</a></li>
-            <li><a href="F1_driver/Bottas/bottas_valtteri.html">Valtteri Bottas</a></li>
-            <li><a href="F1_driver/Hamilton/hamilton_lewis.html">Lewis Hamilton</a></li>
-            <li><a href="F1_driver/Hülkenberg/hülkenberg_nico.html">Nico Hülkenberg</a></li>
-            <li><a href="F1_driver/Leclerc/leclerc_charles.html">Charles Leclerc</a></li>
-            <li><a href="F1_driver/Magnussen/magnussen_kevin.html">Kevin Magnussen</a></li>
-            <li><a href="F1_driver/Moreau/moreau_bryan.html">Bryan Moreau</a></li>
-            <li><a href="F1_driver/Norris/norris_lando.html">Lando Norris</a></li>
-            <li><a href="F1_driver/Perez/perez_sergio.html">Sergio Perez</a></li>
-            <li><a href="F1_driver/Piastri/piastri_oscar.html">Oscar Piastri</a></li>
-            <li><a href="F1_driver/Pierre/pierre_gasly.html">Pierre Gasly</a></li>
-            <li><a href="F1_driver/Ricciardo/ricciardo_daniel.html">Daniel Ricciardo</a></li>
-            <li><a href="F1_driver/Sainz/sainz_carlos.html">Carlos Sainz</a></li>
-            <li><a href="F1_driver/Sargeant/sargeant_logan.html">Logan Sargeant</a></li>
-            <li><a href="F1_driver/Stroll/stroll_lance.html">Lance Stroll</a></li>
-            <li><a href="F1_driver/Tesson/tesson_gabriel.html">Gabriel Tesson</a></li>
-            <li><a href="F1_driver/Thomine/thomine_noah.html">Noah Thomine</a></li>
-            <li><a href="F1_driver/Tsunoda/tsunoda_yuki.html">Yuki Tsunoda</a></li>
-            <li><a href="F1_driver/Verstappen/verstappen_max.html">Max Verstappen</a></li>
-            <li><a href="F1_driver/Zhou/zhou_guanyu.html">Zhou Guanyu</a></li>
-          </ul>
-        </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="menu-trigger">Pilotes ▾</button>
+      <div class="menu-list">
+        <a href="F1_driver/Albon/albon_alexander.html">Alexander Albon</a>
+        <a href="F1_driver/Alonso/alonso_fernando.html">Fernando Alonso</a>
+        <a href="F1_driver/Bottas/bottas_valtteri.html">Valtteri Bottas</a>
+        <a href="F1_driver/Hamilton/hamilton_lewis.html">Lewis Hamilton</a>
+        <a href="F1_driver/Hülkenberg/hülkenberg_nico.html">Nico Hülkenberg</a>
+        <a href="F1_driver/Leclerc/leclerc_charles.html">Charles Leclerc</a>
+        <a href="F1_driver/Magnussen/magnussen_kevin.html">Kevin Magnussen</a>
+        <a href="F1_driver/Moreau/moreau_bryan.html">Bryan Moreau</a>
+        <a href="F1_driver/Norris/norris_lando.html">Lando Norris</a>
+        <a href="F1_driver/Perez/perez_sergio.html">Sergio Perez</a>
+        <a href="F1_driver/Piastri/piastri_oscar.html">Oscar Piastri</a>
+        <a href="F1_driver/Pierre/pierre_gasly.html">Pierre Gasly</a>
+        <a href="F1_driver/Ricciardo/ricciardo_daniel.html">Daniel Ricciardo</a>
+        <a href="F1_driver/Sainz/sainz_carlos.html">Carlos Sainz</a>
+        <a href="F1_driver/Sargeant/sargeant_logan.html">Logan Sargeant</a>
+        <a href="F1_driver/Stroll/stroll_lance.html">Lance Stroll</a>
+        <a href="F1_driver/Tesson/tesson_gabriel.html">Gabriel Tesson</a>
+        <a href="F1_driver/Thomine/thomine_noah.html">Noah Thomine</a>
+        <a href="F1_driver/Tsunoda/tsunoda_yuki.html">Yuki Tsunoda</a>
+        <a href="F1_driver/Verstappen/verstappen_max.html">Max Verstappen</a>
+        <a href="F1_driver/Zhou/zhou_guanyu.html">Zhou Guanyu</a>
       </div>
-      <div class="menu-container3">
-        <span class="menu-trigger3" onclick="toggleMenu3()">Ecuries</span>
-        <div class="menu-list3" id="ecuries-dropdown">
-          <ul>
-            <li><a href="écurie/Alpine/alpine.html">Alpine</a></li>
-            <li><a href="écurie/Aston_Martin/aston.html">Aston Martin</a></li>
-            <li><a href="écurie/Ferrari/ferrari.html">Ferrari</a></li>
-            <li><a href="écurie/Haas/hass.html">Hass</a></li>
-            <li><a href="écurie/Mclaren/mclaren.html">Mclaren</a></li>
-            <li><a href="écurie/Mercedes/mercedes.html">Mercedes</a></li>
-            <li><a href="écurie/Red_Bull/red_bull.html">Red Bull</a></li>
-            <li><a href="écurie/Stake/stake.html">Stake</a></li>
-            <li><a href="écurie/Visa_Cash_App/visa.html">Visa Cash App</a></li>
-            <li><a href="écurie/Williams/williams.html">Williams</a></li>
-          </ul>
-        </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="menu-trigger">Écuries ▾</button>
+      <div class="menu-list">
+        <a href="écurie/Alpine/alpine.html">Alpine</a>
+        <a href="écurie/Aston_Martin/aston.html">Aston Martin</a>
+        <a href="écurie/Ferrari/ferrari.html">Ferrari</a>
+        <a href="écurie/Haas/hass.html">Haas</a>
+        <a href="écurie/Mclaren/mclaren.html">McLaren</a>
+        <a href="écurie/Mercedes/mercedes.html">Mercedes</a>
+        <a href="écurie/Red_Bull/red_bull.html">Red Bull</a>
+        <a href="écurie/Stake/stake.html">Stake</a>
+        <a href="écurie/Visa_Cash_App/visa.html">Visa Cash App</a>
+        <a href="écurie/Williams/williams.html">Williams</a>
       </div>
     </div>
   </div>
 
-  <script>
-  document.querySelector('.menu-trigger').addEventListener('click', function () {
-    const menu = document.querySelector('.menu-list');
-    menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
-  });
-
-  // Optionnel : fermer le menu quand on clique ailleurs
-  document.addEventListener('click', function (e) {
-    const menu = document.querySelector('.menu-list');
-    const trigger = document.querySelector('.menu-trigger');
-    if (!menu.contains(e.target) && !trigger.contains(e.target)) {
-      menu.style.display = 'none';
-    }
-  });
-
-  document.querySelector('.menu-trigger2').addEventListener('click', function () {
-    const menu = document.querySelector('.menu-list2');
-    menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
-  });
-
-  // Optionnel : fermer le menu quand on clique ailleurs
-  document.addEventListener('click', function (e) {
-    const menu = document.querySelector('.menu-list2');
-    const trigger = document.querySelector('.menu-trigger2');
-    if (!menu.contains(e.target) && !trigger.contains(e.target)) {
-      menu.style.display = 'none';
-    }
-  });
-
-  document.querySelector('.menu-trigger3').addEventListener('click', function () {
-    const menu = document.querySelector('.menu-list3');
-    menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
-  });
-
-  // Optionnel : fermer le menu quand on clique ailleurs
-  document.addEventListener('click', function (e) {
-    const menu = document.querySelector('.menu-list3');
-    const trigger = document.querySelector('.menu-trigger3');
-    if (!menu.contains(e.target) && !trigger.contains(e.target)) {
-      menu.style.display = 'none';
-    }
-  });
-</script>  
-
-<div class="container">
-  <div class="card-grid">
-    <div class="card">
-      <img src="image_info_yuki.jpg" alt="Image 1">
-      <div class="card-text">Le transfert choque de RedBull cash app qui decide de changer le pilote Yuki Tsunoda pour le jeune pilote Mathis fraichement sorti de F2</div>
+  <!-- Section actu -->
+  <section class="actus">
+    <h2>Actualités</h2>
+    <div class="card-grid">
+      <div class="card">
+        <img src="image_info_yuki.jpg" alt="Image actu">
+        <p>Le transfert choc de Red Bull Cash App qui décide de remplacer Yuki Tsunoda par le jeune Mathis issu de la F2.</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x150" alt="Image actu">
+        <p>Texte de la deuxième actu.</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x150" alt="Image actu">
+        <p>Texte de la troisième actu.</p>
+      </div>
+      <div class="card">
+        <img src="imoge_pilote_actu_4.png" alt="Image actu">
+        <p>Texte de la quatrième actu.</p>
+      </div>
     </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/300x150" alt="Image 2">
-      <div class="card-text">Texte de la deuxième case</div>
-    </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/300x150" alt="Image 3">
-      <div class="card-text">Texte de la troisième case</div>
-    </div>
-    <div class="card">
-      <img src="imoge_pilote_actu_4.png" alt="Image 4">
-      <div class="card-text">Texte de la quatrième case</div>
-    </div>
-  </div>
+  </section>
 
-  <div class="layout">
+  <!-- Classements pilotes et écuries -->
+  <section class="classements">
     <div class="table-wrapper">
       <table>
         <thead>
-          <tr>
-            <th colspan="5">Classement des pilotes</th>
-          </tr>
-          <tr>
-            <th>Position</th>
-            <th>N°</th>
-            <th>Pilote</th>
-            <th>Écurie</th>
-            <th>Points</th>
-          </tr>
+          <tr><th colspan="5">Classement Pilotes</th></tr>
+          <tr><th>Pos</th><th>N°</th><th>Pilote</th><th>Écurie</th><th>Points</th></tr>
         </thead>
         <tbody>
           <tr><td>1</td><td>80</td><td>Moreau</td><td>Mercedes</td><td>131</td></tr>
@@ -196,145 +138,62 @@
           <tr><td>4</td><td>44</td><td>Hamilton</td><td>Mercedes</td><td>75</td></tr>
           <tr><td>5</td><td>1</td><td>Verstappen</td><td>Red Bull</td><td>71</td></tr>
           <tr><td>6</td><td>4</td><td>Norris</td><td>Mclaren</td><td>66</td></tr>
-          <tr><td>7</td><td>11</td><td>Perez</td><td>Red bull</td><td>65</td></tr>
+          <tr><td>7</td><td>11</td><td>Perez</td><td>Red Bull</td><td>65</td></tr>
           <tr><td>8</td><td>81</td><td>Piastri</td><td>Mclaren</td><td>52</td></tr>
           <tr><td>9</td><td>13</td><td>Thomine</td><td>Aston Martin</td><td>37</td></tr>
           <tr><td>10</td><td>55</td><td>Sainz</td><td>Ferrari</td><td>34</td></tr>
           <tr><td>11</td><td>23</td><td>Albon</td><td>Williams</td><td>20</td></tr>
           <tr><td>12</td><td>14</td><td>Alonso</td><td>Aston Martin</td><td>16</td></tr>
           <tr><td>13</td><td>2</td><td>Sargeant</td><td>Williams</td><td>13</td></tr>
-          <tr><td>14</td><td>22</td><td>Tsunoda</td><td>Visa cash app</td><td>9</td></tr>
+          <tr><td>14</td><td>22</td><td>Tsunoda</td><td>Visa Cash App</td><td>9</td></tr>
           <tr><td>15</td><td>27</td><td>Hülkenberg</td><td>Haas</td><td>6</td></tr>
-          <tr><td>16</td><td>10</td><td>Gasly</td><td>Alpin</td><td>6</td></tr>
+          <tr><td>16</td><td>10</td><td>Gasly</td><td>Alpine</td><td>6</td></tr>
           <tr><td>17</td><td>24</td><td>Zhou</td><td>Stake</td><td>4</td></tr>
           <tr><td>18</td><td>20</td><td>Magnussen</td><td>Haas</td><td>1</td></tr>
-          <tr><td>19</td><td>3</td><td>Ricciardo</td><td>Visa cash app</td><td>1</td></tr>
+          <tr><td>19</td><td>3</td><td>Ricciardo</td><td>Visa Cash App</td><td>1</td></tr>
           <tr><td>20</td><td>77</td><td>Bottas</td><td>Stake</td><td>0</td></tr>   
         </tbody>
       </table>
     </div>
-  </div>
 
-</div>
-
-<div class="layout2">
-    <div class="table2-wrapper">
+    <div class="table-wrapper">
       <table>
         <thead>
-          <tr>
-            <th colspan="5">Classement des écuries</th>
-          </tr>
-          <tr>
-            <th>Position</th>
-            <th>Pilotes</th>
-            <th>Ecuries</th>
-            <th>Voitures</th>
-            <th>Points</th>
-          </tr>
+          <tr><th colspan="5">Classement Écuries</th></tr>
+          <tr><th>Pos</th><th>Pilotes</th><th>Écurie</th><th>Voiture</th><th>Points</th></tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Lewis Hamilton et Bryan Moreau</td>
-            <td>Mercedes</td>
-            <td>
-              <img src="image_mercedes.avif" alt="Image Mercedes" class="case-img">
-            </td>
-            <td>206</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Max Verstappen et Sergio Perez</td>
-            <td>Red Bull</td>
-            <td>
-              <img src="image_redbull.jpg" alt="Image Mercedes" class="case-img">
-            </td>
-            <td>136</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Pierre Gasly et Gabriel Tesson</td>
-            <td>Alpine</td>
-            <td>
-              <img src="image_alpine.jpg" alt="Image Mercedes" class="case-img">
-            </td>
-            <td>134</td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>Oscar Piastri et Lando Norris</td>
-            <td>Mclaren</td>
-            <td>
-              <img src="image_mclaren.jpg" alt="Image Mercedes" class="case-img">
-            </td>
-            <td>118</td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>Charles Leclerc et Carlos Sainz</td>
-            <td>Ferrari</td>
-            <td>
-              <img src="image_ferrari.webp" alt="Image Mercedes" class="case-img">
-            </td>
-            <td>118</td>
-          </tr>
-          <tr>
-            <td>6</td>
-            <td>Lance Stroll, Fernando Alonso et Noah Thomine</td>
-            <td>Aston Martin</td>
-            <td>
-              <img src="image_aston_martin.avif" alt="Image Mercedes" class="case-img">
-            </td>
-            <td>53</td>
-          </tr>
-          <tr>
-            <td>7</td>
-            <td>Alexander Albon et Logan Sargeant</td>
-            <td>Williams</td>
-            <td>
-              <img src="image_williams.avif" alt="Image Mercedes" class="case-img">
-            </td>
-            <td>33</td>
-          </tr>
-          <tr>
-            <td>8</td>
-            <td>Daniel Ricciardo et Yuki Tsunoda</td>
-            <td>Visa Cash App</td>
-            <td>
-              <img src="image_visa_cash_app.webp" alt="Image Mercedes" class="case-img">
-            </td>
-            <td>10</td>
-          </tr>
-          <tr>
-            <td>9</td>
-            <td>Nico Hülkenberg et Kevin Magnussen</td>
-            <td>Hass</td>
-            <td>
-              <img src="image_hass.jpg" alt="Image Mercedes" class="case-img">
-            </td>
-            <td>7</td>
-          </tr>
-          <tr>
-            <td>10</td>
-            <td>Zhou Guanyu et Valtteri Bottas</td>
-            <td>Kick Sauber</td>
-            <td>
-              <img src="image_kick.avif" alt="Image Mercedes" class="case-img">
-            </td>
-            <td>4</td>
-          </tr>
-        
+          <tr><td>1</td><td>Hamilton & Moreau</td><td>Mercedes</td><td><img src="image_mercedes.avif" class="case-img"></td><td>206</td></tr>
+          <tr><td>2</td><td>Verstappen & Perez</td><td>Red Bull</td><td><img src="image_redbull.jpg" class="case-img"></td><td>136</td></tr>
+          <tr><td>3</td><td>Gasly & Tesson</td><td>Alpine</td><td><img src="image_alpine.jpg" class="case-img"></td><td>134</td></tr>
+          <tr><td>4</td><td>Piastri & Norris</td><td>Mclaren</td><td><img src="image_mclaren.jpg" class="case-img"></td><td>118</td></tr>
+          <tr><td>5</td><td>Leclerc & Sainz</td><td>Ferrari</td><td><img src="image_ferrari.webp" class="case-img"></td><td>118</td></tr>
+          <tr><td>6</td><td>Stroll, Alonso & Thomine</td><td>Aston Martin</td><td><img src="image_aston_martin.avif" class="case-img"></td><td>53</td></tr>
+          <tr><td>7</td><td>Albon & Sargeant</td><td>Williams</td><td><img src="image_williams.avif" class="case-img"></td><td>33</td></tr>
+          <tr><td>8</td><td>Ricciardo & Tsunoda</td><td>Visa Cash App</td><td><img src="image_visa_cash_app.webp" class="case-img"></td><td>10</td></tr>
+          <tr><td>9</td><td>Hülkenberg & Magnussen</td><td>Haas</td><td><img src="image_hass.jpg" class="case-img"></td><td>7</td></tr>
+          <tr><td>10</td><td>Zhou & Bottas</td><td>Stake</td><td><img src="image_kick.avif" class="case-img"></td><td>4</td></tr>
         </tbody>
       </table>
     </div>
-  </div>
+  </section>
 
-
-
-
+  <!-- Script menus -->
+  <script>
+    document.querySelectorAll(".menu-trigger").forEach(trigger => {
+      trigger.addEventListener("click", function (e) {
+        e.stopPropagation();
+        const menu = this.nextElementSibling;
+        document.querySelectorAll(".menu-list").forEach(m => {
+          if (m !== menu) m.style.display = "none";
+        });
+        menu.style.display = (menu.style.display === "block") ? "none" : "block";
+      });
+    });
+    document.addEventListener("click", () => {
+      document.querySelectorAll(".menu-list").forEach(m => m.style.display = "none");
+    });
+  </script>
 
 </body>
 </html>
- 
-
-

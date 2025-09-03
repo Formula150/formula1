@@ -1,598 +1,184 @@
+/* Global */
 body {
   margin: 0;
-  padding: 0;
-  background-color: rgb(21, 21, 31)
+  font-family: 'Montserrat', sans-serif;
+  background: #0d0d0d;
+  color: #fff;
 }
 
+/* Top bar */
 .top-bar {
-  width: 100%;
-  height: 40px;
-  background: #111;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 100;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  padding-left: 24px;
+  background: #111;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 2px solid red;
 }
 
 .top-bar-img {
-  height: 28px;
-  margin-right: 12px;
-}
-
-.top-bar-vertical {
-  display: inline-block;
-  width: 3px;
-  height: 32px;
-  background: #b4adad;
-  margin-right: 16px;
-  border-radius: 2px;
-  vertical-align: middle;
+  height: 40px;
 }
 
 .top-bar-text {
-  color: #b4adad;
-  font-size: 1em;
-  font-family: 'Montserrat', Arial, sans-serif;
-  font-weight: 900;
-}
-
-.top-bar-right {
-  margin-left: auto;
-  margin-right: 16px;   /* décalage vers la droite */
-  color: #b4adad;
-  font-size: 0.85em;
-  font-family: 'Montserrat', Arial, sans-serif;
   font-weight: 700;
-  padding-right: 24px;
-  word-spacing: normal;
-  align-items: right flex-end;
-  
-
+  font-size: 1.2em;
 }
 
-.top-bar-right a {
-  text-decoration: none;   /* Enlève le soulignement */
-  font-style: normal;      /* Pas d'italique */
-  font-weight: normal;     /* Pas en gras */
-  color: inherit;          /* Garde la couleur du texte parent */
-  font-size: 1em;
-  font-weight: 900;  
+.top-bar-links a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  transition: color 0.3s;
 }
 
-.top-bar-vertical {
-  display: inline-block;
-  width: 1px;
-  height: 16px;
-  background-color: #b4adad;
-  margin: 0 8px; /* espace entre les liens */
+.top-bar-links a:hover {
+  color: red;
 }
 
-.f1_tv_btn {
+.btn-f1tv {
+  background: red;
+  padding: 6px 12px;
+  border-radius: 5px;
   display: inline-flex;
-  align-items: baseline; /* aligne l’image à la ligne de base du texte */
-  gap: 6px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 1em;
-  color: #b4adad;
-  padding: 0px;
+  align-items: center;
+  font-weight: 700;
 }
 
-.f1_tv_btn img {
-  height: 14px;         /* même hauteur visuelle que le texte */
-  vertical-align: baseline;
+.btn-f1tv img {
+  height: 20px;
+  margin-right: 5px;
 }
 
-.f1_tv_text {
-  font-size: 1em;
-  line-height: 1;
-  font-family: 'Montserrat', Arial, sans-serif;
-  font-weight: 900; 
-}
-
-.banniere {
-  width: 100%; /* 100% de la largeur de la fenêtre */
-  height: 100px;
-  background-color: rgb(21, 21, 31);
-  background-size: cover;
-  background-position: left center;
-  background-repeat: no-repeat;
-  display: flex; 
-  margin: 0;
-  padding: 0;
-  margin-top: 40px;
-  /*filter: brightness(50%);  /* rend l’image plus sombre */
-  border-top: 1px solid gray;     /* Bordure grise en haut */
-  border-bottom: 1px solid gray;  /* Bordure grise en bas */
-}
-
-.banniere-img {
-  height: 100px;
-  margin-left: 75px; 
-}
-
-.menu-container {
-  position: relative;
-  display: inline-block;
-  font-family: Arial, sans-serif;
+/* Navbar dropdown */
+.navbar {
+  display: flex;
+  justify-content: center;
+  background: #1a1a1a;
+  padding: 10px 0;
+  gap: 30px;
 }
 
 .menu-trigger {
+  background: none;
+  border: none;
+  color: #fff;
+  font-weight: 600;
   cursor: pointer;
-  color: rgb(255, 255, 255);
-  font-size: 2em;
+  font-size: 1em;
+}
+
+.menu-trigger:hover {
+  color: red;
 }
 
 .menu-list {
   display: none;
   position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: rgb(21, 21, 31);
-  padding: 0; /*  Supprime le padding autour de la liste */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  background: #222;
+  border: 1px solid #444;
+  margin-top: 10px;
+  border-radius: 5px;
+  min-width: 180px;
   z-index: 1000;
-  min-width: 160px; /*  Réduction de la largeur */
 }
 
-.menu-list ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.menu-list li {
-  padding: 0; /*  Aucun espace vertical entre les éléments */
-  margin: 0;
-}
-
-.menu-list li a {
+.menu-list a {
+  display: block;
+  padding: 10px;
   color: white;
   text-decoration: none;
-  display: block;
-  padding: 8px 12px; /*  Zone cliquable plus compacte */
-  font-size: 0.95em;
-  line-height: 1;
 }
 
-.menu-list li a:hover {
-  background-color: #333;
+.menu-list a:hover {
+  background: red;
 }
 
-.menu-container2 {
-  position: relative;
-  display: inline-block;
-  font-family: Arial, sans-serif;
-}
-
-.menu-trigger2 {
-  cursor: pointer;
-  color: rgb(255, 255, 255);
-  font-size: 2em;
-}
-
-.menu-list2 {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: rgb(21, 21, 31);
-  padding: 0;                                    /*  Supprime le padding autour de la liste */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  z-index: 1000;
-  min-width: 160px;                             /*  Réduction de la largeur */
-}
-
-.menu-list2 ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.menu-list2 li {
-  padding: 0;                                 /*  Aucun espace vertical entre les éléments */
-  margin: 0;
-}
-
-.menu-list2 li a {
-  color: white;
-  text-decoration: none;
-  display: block;
-  padding: 8px 12px; /*  Zone cliquable plus compacte */
-  font-size: 0.95em;
-  line-height: 1;
-}
-
-.menu-list2 li a:hover {
-  background-color: #333;
-}
-
-.menu-container3 {
-  position: relative;
-  display: inline-block;
-  font-family: Arial, sans-serif;
-}
-
-.menu-trigger3 {
-  cursor: pointer;
-  color: rgb(255, 255, 255);
-  font-size: 2em;
-}
-
-.menu-list3 {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: rgb(21, 21, 31);
-  padding: 0; /*  Supprime le padding autour de la liste */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  z-index: 1000;
-  min-width: 160px; /*  Réduction de la largeur */
-}
-
-.menu-list3 ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.menu-list3 li {
-  padding: 0; /*  Aucun espace vertical entre les éléments */
-  margin: 0;
-}
-
-.menu-list3 li a {
-  color: white;
-  text-decoration: none;
-  display: block;
-  padding: 8px 12px; /*  Zone cliquable plus compacte */
-  font-size: 0.95em;
-  line-height: 1;
-}
-
-.menu-list3 li a:hover {
-  background-color: #333;
-}
-
-.header-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between; /* Logo à gauche, menus à droite */
-  padding: 0 20px;
-  gap: 300px;    /* Espace entre le logo et les menus */
-}
-
-.menus-wrapper {
-  display: flex;
-  gap: 30px; /* Espace entre les menus */
-  align-items: center;
-}
-
-.menu-container {
-  position: relative;
-  font-family: Arial, sans-serif;
-}
-
-/* Appliquer à toutes les .menu-listX */
-.menu-list,
-.menu-list2,
-.menu-list3 {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: rgb(21, 21, 31);
-  padding: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  z-index: 1000;
-  min-width: 160px;
-  border-radius: 10px; /* Coins arrondis */
-  border: 1px solid #444; /* Contour discret */
-}
-
-.menu-list ul,
-.menu-list2 ul,
-.menu-list3 ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.menu-list li,
-.menu-list2 li,
-.menu-list3 li {
-  padding: 0;
-  margin: 0;
-}
-
-.menu-list li a,
-.menu-list2 li a,
-.menu-list3 li a {
-  color: white;
-  text-decoration: none;
-  display: block;
-  padding: 8px 12px;
-  font-size: 0.95em;
-  line-height: 1;
-}
-
-.menu-list li a:hover,
-.menu-list2 li a:hover,
-.menu-list3 li a:hover {
-  background-color: #333;
-}
-
-
-.menu-trigger,
-.menu-trigger2,
-.menu-trigger3 {
-  cursor: pointer;
-  color: white;
-  font-size: 2em;
-  background-color: rgba(255, 255, 255, 0.05);          /* léger fond pour les distinguer */
-  border: 1px solid #888;                               /* cadre gris clair */
-  border-radius: 10px;                                    /* coins arrondis */
-  padding: 6px 14px;                                      /* espace intérieur */
-  transition: background-color 0.3s ease;
-}
-
-.menu-trigger:hover,
-.menu-trigger2:hover,
-.menu-trigger3:hover {
-  background-color: rgba(255, 255, 255, 0.15);            /* effet au survol */
-}
-
-.container {
-  display: flex; /* Flex horizontal */
-  gap: 40px;
-  padding-top: 40px;
-  padding-left: 40px;
-  align-items: flex-start;
-}
-
-
-
-
-
-/* Conteneur global en flex : cartes à gauche, tableau à droite */
-.container {
-  display: flex;
-  align-items: flex-start;
-  gap: 40px;
+/* Section actu */
+.actus {
   padding: 40px;
-  flex-wrap: wrap;
 }
 
-/* Grille des cartes (2x2) à gauche */
+.actus h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-  margin-left: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
 }
 
-/* Style des cartes */
 .card {
-  background-color: rgb(131, 123, 123);
-  border: 2px solid #aaffff; /* Contour néon clair */
+  background: #1a1a1a;
   border-radius: 10px;
-  box-shadow: 0 0 12px #aaffff;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  width: 550px;
-  height: 415px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(255,0,0,0.4);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
 }
 
 .card img {
   width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 10px 10px 0 0;  /* Coins supérieurs arrondis uniquement */
+  display: block;
 }
 
-.card-text {
+.card p {
   padding: 15px;
-  font-size: 1.35em;
+  font-size: 0.95em;
 }
 
-/* Bloc tableau à droite */
-.layout {
-  flex-shrink: 0;
-  background-color: transparent;
-  border: none;
-  border-radius: 10px;
-  padding: 0;
-  max-width: 600px;
+/* Classements */
+.classements {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  padding: 40px;
+}
+
+.table-wrapper {
   overflow-x: auto;
-  margin-left: 60px;
-  border: 2px solid #aaffff; /* Contour néon clair */
-  border-radius: 10px;
-  box-shadow: 0 0 12px #aaffff;
 }
 
-/* Table style */
 table {
-  border-collapse: collapse;
   width: 100%;
-  min-width: 500px;
-  background-color: rgba(131, 123, 123, 0.8);
-  margin: 0;
-}
-
-th, td {
-  border: light #000000; /* Contour néon clair */
-  padding: 10px;
-  text-align: center;
-  color: black;
-  background-color: rgba(255, 255, 255, 0.08);
-}
-
-th {
-  font-weight: bold;
-  font-size: 1.15em;
-}
-
-a {
-  color: #000;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* Responsive */
-@media (max-width: 1000px) {
-  .container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .layout {
-    margin-top: 30px;
-  }
-
-  .card-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .card {
-    width: 90%;
-  }
-}
-
-.layout2 {
-  flex-shrink: 0;
-  background-color: transparent;
-  padding: 0;
-  overflow-x: auto;
-  margin-left: 70px;
-  margin-right: 90px;
-  border: 2px solid #aaffff; /* Contour néon clair */
+  border-collapse: collapse;
+  background: #1a1a1a;
   border-radius: 10px;
-  box-shadow: 0 0 12px #aaffff;
-  width: auto;
+  overflow: hidden;
 }
 
-/* Table style */
-.table2-wrapper {
-  width: 100%;
-  min-width: 500px;
-  background-color: rgba(131, 123, 123, 0.8);
-  margin: 0;
-  border-collapse: collapse;
+thead th {
+  background: red;
+  color: #fff;
+  padding: 12px;
 }
 
-th, td {
-  border: 1px solid #aaffff; /* Bordures internes néon clair */
+td, th {
   padding: 10px;
   text-align: center;
-  color: black;
-  background-color: rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid #333;
 }
 
-th {
-  font-weight: bold;
-}
-
-a {
-  color: #000;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* Responsive */
-@media (max-width: 1000px) {
-  .container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .layout {
-    margin-top: 30px;
-  }
-
-  .card-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .card {
-    width: 90%;
-  }
+tr:hover {
+  background: rgba(255,0,0,0.2);
 }
 
 .case-img {
-  display: block;          /* Supprime les espaces blancs autour de l'image */
-  width: 175px;
-  height: 60px;
-  object-fit: cover;
-  object-position: center;
-  margin: 0 auto;          /* Centre horizontalement l'image */
+  height: 30px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media (max-width: 1000px) {
-  .container {
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-  }
-
-  .layout,
-  .layout2 {
-    margin-top: 30px;
-    margin-left: 0;
-    margin-right: 0;
-    width: 90%;
-  }
-
-  .card-grid {
+/* Responsive */
+@media (max-width: 768px) {
+  .classements {
     grid-template-columns: 1fr;
-    margin-left: 0;
-  }
-
-  .card {
-    width: 100%;
-    height: auto;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
