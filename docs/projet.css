@@ -99,6 +99,24 @@ body {
 }
 
 /* Section actu */
+.btn-actus {
+  display: inline-block;
+  background: red;
+  color: #fff;
+  font-weight: 700;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-bottom: 20px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn-actus:hover {
+  background: #ff4d4d;
+  transform: scale(1.05);
+}
+
+
 .actus {
   padding: 40px;
 }
@@ -120,6 +138,9 @@ body {
   overflow: hidden;
   box-shadow: 0 0 10px rgba(255,0,0,0.4);
   transition: transform 0.3s;
+  display: block;
+  text-decoration: none; /* supprime le soulignement */
+  color: inherit; /* garde la couleur du texte définie pour le body ou la carte */
 }
 
 .card:hover {
