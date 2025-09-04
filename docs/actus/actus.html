@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Actualités F1 - Saison 2024</title>
+  <link rel="stylesheet" href="../projet.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="../logo_f1.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Styles spécifiques pour l’extension des articles */
+    .card {
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+    }
+
+    .card-content {
+      display: none;
+      margin-top: 10px;
+      padding: 15px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 10px;
+      font-size: 0.95em;
+      text-align: left;
+      position: relative;
+    }
+
+    .card.active .card-content {
+      display: block;
+      animation: fadeIn 0.4s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Bouton fermer */
+    .close-btn {
+      display: inline-block;
+      background: #8b0000;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.9em;
+      cursor: pointer;
+      margin-top: 12px;
+      transition: background 0.3s ease;
+    }
+
+    .close-btn:hover {
+      background: #ff0000;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Barre supérieure -->
+  <header class="top-bar">
+    <img src="../logo_fia.jpg" alt="Logo FIA" class="top-bar-img">
+    <span class="top-bar-text">Actualités F1 - Saison 2024</span>
+    <nav class="top-bar-links">
+      <a href="https://f1store.formula1.com/fr/">Magasin</a>
+      <a href="https://www.f1authentics.com/">Authentique</a>
+      <a href="https://f1tv.formula1.com/" class="btn-f1tv">
+        <img src="../logo_f1_2.png" alt="f1-tv">
+        <span>F1 TV</span>
+      </a>
+    </nav>
+  </header>
+
+  <!-- Section actu -->
+  <section class="actus">
+    <h1>Toutes les actualités</h1>
+    <a href="../index.html" class="btn-actus">← Retour à l'accueil</a>
+
+    <div class="card-grid">
+      
+      <!-- Actu 1 -->
+      <div class="card">
+        <img src="../image_info_yuki.jpg" alt="Image actu">
+        <p><strong>Red Bull remplace Tsunoda par Mathis</strong></p>
+        <div class="card-content">
+          <p>Dans une décision inattendue, Red Bull Cash App a choisi de remplacer Yuki Tsunoda par Mathis, jeune espoir issu de la F2. 
+             L’écurie mise sur son potentiel et espère voir des résultats rapides. Tsunoda, quant à lui, pourrait rebondir dans une autre équipe.</p>
+          <button class="close-btn">Fermer</button>
+        </div>
+      </div>
+
+      <!-- Actu 2 -->
+      <div class="card">
+        <img src="../stroll_alonso_actu.jpg" alt="Stroll vs Alonso">
+        <p><strong>Stroll remplacé par Alonso chez Aston Martin</strong></p>
+        <div class="card-content">
+          <p>Fernando Alonso reprend le volant chez Aston Martin après la mise à l’écart de Lance Stroll. 
+             L’expérience du double champion du monde est vue comme un atout majeur pour stabiliser et renforcer l’équipe 
+             dans une saison très disputée.</p>
+          <button class="close-btn">Fermer</button>
+        </div>
+      </div>
+
+      <!-- Actu 3 -->
+      <div class="card">
+        <img src="../image_crash_norris.jpg" alt="DNF Norris Monaco">
+        <p><strong>DNF pour Norris à Monaco</strong></p>
+        <div class="card-content">
+          <p>Gros coup dur pour Lando Norris : son abandon à Monaco coûte de précieux points à McLaren, 
+             mettant l’équipe à égalité avec Ferrari au championnat constructeur (118 points chacun). 
+             Un week-end amer qui pourrait peser lourd sur la saison.</p>
+          <button class="close-btn">Fermer</button>
+        </div>
+      </div>
+
+      <!-- Actu 4 -->
+      <div class="card">
+        <img src="../image_doubléredbull.jpg" alt="Red Bull doublé Verstappen Perez">
+        <p><strong>Red Bull réalise le doublé Verstappen - Perez</strong></p>
+        <div class="card-content">
+          <p>Red Bull frappe fort : Max Verstappen s’impose devant Sergio Perez, offrant à l’écurie un doublé décisif. 
+             Grâce à ce résultat, Red Bull dépasse Alpine au championnat constructeur. 
+             Une démonstration de force qui confirme la domination de l’équipe autrichienne.</p>
+          <button class="close-btn">Fermer</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Script ouverture/fermeture unique -->
+  <script>
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('click', (e) => {
+        // éviter que le clic sur le bouton fermer relance l'ouverture
+        if (e.target.classList.contains('close-btn')) return;
+
+        // Fermer tous les autres articles
+        document.querySelectorAll('.card').forEach(c => {
+          if (c !== card) c.classList.remove('active');
+        });
+        // Ouvrir ou fermer l'article cliqué
+        card.classList.toggle('active');
+      });
+    });
+
+    // Gérer le bouton "Fermer"
+    document.querySelectorAll('.close-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation(); // empêche la propagation
+        e.target.closest('.card').classList.remove('active');
+      });
+    });
+
+    document.querySelectorAll('.show-more').forEach(button => {
+  button.addEventListener('click', () => {
+    const card = button.closest('.card');       // prend la carte parente
+    const moreText = card.querySelector('.more-text'); // trouve le texte détaillé de cette carte
+    moreText.style.display = (moreText.style.display === 'block') ? 'none' : 'block';
+    button.textContent = (moreText.style.display === 'block') ? 'Lire moins' : 'Lire plus';
+  });
+});
+
+  </script>
+
+</body>
+</html>
