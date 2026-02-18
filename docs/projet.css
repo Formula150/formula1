@@ -197,6 +197,17 @@ tr:hover {
   height: 30px;
 }
 
+/* Nouvelle classe pour forcer une actu à prendre toute la ligne */
+.card.full-width {
+  grid-column: 1 / -1; /* prend toute la largeur de la grille */
+}
+
+video {
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255,0,0,0.4);
+}
+
+
 /* Responsive */
 @media (max-width: 768px) {
   .classements {
