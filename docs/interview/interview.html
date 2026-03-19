@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interviews — Saison 2024</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../interview/public/interview.css" />
+   
+  
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-left">
+      <a href="#" class="nav-logo">FIA</a>
+      <a href="#" class="nav-title">Saison 2024</a>
+    </div>
+    <div class="nav-links">
+      <a href="../index.html" class="nav-link">Grand Prix</a>
+      <a href="../index.html" class="nav-link">Pilotes</a>
+      <a href="../index.html" class="nav-link">Écuries</a>
+      <a href="#" class="nav-link active">Interviews</a>
+    </div>
+    <div class="nav-right">
+      <a href="https://f1store.formula1.com/fr/" class="nav-btn">Magasin</a>
+      <a href="https://www.f1authentics.com/" class="nav-btn">Authentique</a>
+      <a href="https://f1tv.formula1.com/" class="btn-f1tv">
+        <img src="logo_f1_2.png" alt="f1-tv">
+        <span>F1 TV</span></a>
+    </div>
+  </nav>
+
+  <!-- SUBNAV -->
+  <div class="subnav">
+    <a href="#" class="subnav-link active" onclick="setSubnav(event, this)">Toutes</a>
+    <!-- <a href="#" class="subnav-link" onclick="setSubnav(event, this)">Après-course</a>
+    <a href="#" class="subnav-link" onclick="setSubnav(event, this)">Pré-saison</a>
+    <a href="#" class="subnav-link" onclick="setSubnav(event, this)">Conférence de presse</a>
+    <a href="#" class="subnav-link" onclick="setSubnav(event, this)">Exclusif</a>-->
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-label">Exclusivité paddock</div>
+    <h1 class="hero-title">Interviews</h1>
+    <p class="hero-sub">Les pilotes parlent — stratégie, rivalités, coulisses</p>
+  </section>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <div class="section-label">À la une</div>
+
+    <div class="featured-grid">
+
+      <div class="card featured" onclick="openModal('Thomine')">
+        <div class="card-img" style="background:#1a0f0f;">
+          <div class="card-img-bg">13</div>
+          <span class="card-tag">Exclusif</span>
+        </div>
+        <div class="card-body">
+          <div class="card-driver">
+            <span class="card-number">13</span>
+            <span class="card-name">Thomine</span>
+            <span class="card-team"><span class="team-dot" style="background:rgb(16, 114, 25);"></span>Aston Martin</span>
+          </div>
+          <div class="card-title">« Les performance ne sont pas au rendez-vous »</div>
+          <p class="card-preview">Noah revient sur les 5 dernières courses du championnat et explique pourquoi les performances n'ont pas été à la hauteur de ses attentes.</p>
+          <div class="card-meta">
+            <span class="card-date">19 février 2026</span>
+            <span class="card-read">Lire l'interview →</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="featured-right">
+        <div class="card" onclick="openModal('tesson')">
+          <div class="card-img" style="background:#0a1a0f;">
+            <div class="card-img-bg">17</div>
+            <span class="card-tag">Après-course</span>
+          </div>
+          <div class="card-body">
+            <div class="card-driver">
+              <span class="card-number">17</span>
+              <span class="card-name">Tesson</span>
+              <span class="card-team"><span class="team-dot" style="background:rgb(53, 191, 216)"></span>Alpine</span>
+            </div>
+            <div class="card-title">« La FIA aurait dû reporter à cause de la forte pluie »</div>
+            <div class="card-meta">
+              <span class="card-date">19 février 2026</span>
+              <span class="card-read">Lire →</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" onclick="openModal('alonso')">
+          <div class="card-body">
+            <div class="card-driver">
+              <span class="card-number">14</span>
+              <span class="card-name">Alonso</span>
+              <span class="card-team"><span class="team-dot" style="background:#358C75;"></span>Aston Martin</span>
+            </div>
+            <div class="card-title">« Stroll et moi, c'était une vraie aventure humaine »</div>
+            <p class="card-preview">Fernando revient sur son passage chez Aston Martin et les changements de dynamique au sein de l'équipe après le départ de Lance.</p>
+            <div class="card-meta">
+              <span class="card-date">3 Oct 2024</span>
+              <span class="card-read">Lire →</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="quote-block">
+      <div class="quote-text">« En carrière, chaque course compte double. Pas de place pour les regrets. »</div>
+      <div class="quote-author"><span>Max Verstappen</span> — Interview exclusive, Nov 2024</div>
+    </div>
+<!--
+    <div class="section-label">Dernières interviews</div>
+
+    <div class="interview-list">
+      <div class="list-item" onclick="openModal('perez')">
+        <div class="list-num">11</div>
+        <div class="list-info">
+          <div class="list-driver"><span class="team-dot" style="background:#3671C6;"></span>Sergio Perez — Red Bull</div>
+          <div class="list-title">« Je me suis battu jusqu'au bout pour ma place »</div>
+          <div class="list-date">22 Nov 2024</div>
+        </div>
+        <span class="list-tag">Conférence</span>
+        <span class="list-arrow"></span>
+      </div>
+
+      <div class="list-item" onclick="openModal('tsunoda')">
+        <div class="list-num">22</div>
+        <div class="list-info">
+          <div class="list-driver"><span class="team-dot" style="background:#6692FF;"></span>Yuki Tsunoda — RB</div>
+          <div class="list-title">« Le transfert ? Une décision que je n'ai pas vue venir »</div>
+          <div class="list-date">18 Nov 2024</div>
+        </div>
+        <span class="list-tag">Exclusif</span>
+        <span class="list-arrow"></span>
+      </div>
+
+      <div class="list-item" onclick="openModal('stroll')">
+        <div class="list-num">18</div>
+        <div class="list-info">
+          <div class="list-driver"><span class="team-dot" style="background:#358C75;"></span>Lance Stroll — Aston Martin</div>
+          <div class="list-title">« J'ai appris énormément cette saison, même dans l'adversité »</div>
+          <div class="list-date">10 Nov 2024</div>
+        </div>
+        <span class="list-tag">Après-course</span>
+        <span class="list-arrow"></span>
+      </div>
+
+      <div class="list-item" onclick="openModal('leclerc')">
+        <div class="list-num">16</div>
+        <div class="list-info">
+          <div class="list-driver"><span class="team-dot" style="background:#E8002D;"></span>Charles Leclerc — Ferrari</div>
+          <div class="list-title">« Cette Ferrari avait le potentiel pour le titre »</div>
+          <div class="list-date">5 Nov 2024</div>
+        </div>
+        <span class="list-tag">Exclusif</span>
+        <span class="list-arrow"></span>
+      </div>
+
+      <div class="list-item" onclick="openModal('hamilton')">
+        <div class="list-num">44</div>
+        <div class="list-info">
+          <div class="list-driver"><span class="team-dot" style="background:#27F4D2;"></span>Lewis Hamilton — Mercedes</div>
+          <div class="list-title">« Le changement Ferrari ? La meilleure décision de ma carrière »</div>
+          <div class="list-date">28 Oct 2024</div>
+        </div>
+        <span class="list-tag">Pré-saison</span>
+        <span class="list-arrow">›</span>
+      </div>
+    </div>
+    -->
+
+  </main>
+
+  <footer class="footer">
+    <span class="footer-text">© 2024 Saison F1 — Carrière personnelle</span>
+    <span class="footer-logo">F1 2024</span>
+    <span class="footer-text">Fait avec passion 🏎</span>
+  </footer>
+
+
+  <!-- ══════════════════════════════
+       MODAL
+  ══════════════════════════════ -->
+  <div class="modal-overlay" id="modalOverlay" onclick="handleOverlayClick(event)">
+    <div class="modal" id="modal">
+
+      <button class="modal-close" onclick="closeModal()">✕</button>
+
+      <div class="modal-header">
+        <div class="modal-tag" id="modalTag"></div>
+        <div class="modal-driver">
+          <div class="modal-number" id="modalNumber"></div>
+          <div class="modal-driver-info">
+            <div class="modal-name" id="modalName"></div>
+            <div class="modal-team">
+              <span class="team-dot" id="modalTeamDot"></span>
+              <span id="modalTeamName"></span>
+            </div>
+          </div>
+        </div>
+        <div class="modal-title" id="modalTitle"></div>
+        <div class="modal-date" id="modalDate"></div>
+      </div>
+
+      <div class="modal-body">
+        <div class="interview-qa" id="modalContent"></div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <script>
+    /* ═══════════════════════════════════════════════
+       DONNÉES DES INTERVIEWS
+       Pour ajouter une interview :
+         1. Ajoute une entrée dans l'objet "interviews"
+         2. Dans le HTML, ajoute onclick="openModal('ta_cle')" sur la carte ou l'item de liste
+    ═══════════════════════════════════════════════ */
+    const interviews = {
+
+      Thomine: {
+        tag: 'Exclusif',
+        number: '13',
+        name: 'Thomine',
+        teamColor: '#358C75',
+        teamName: 'Aston Martin',
+        title: '« Les performance ne sont pas au rendez-vous »',
+        date: '19 février 2026',
+        qa: [
+          {
+            q: 'Comment qualifiais vous vos performances ces 5 derniers grand prix ?',
+            a: "Les 5 derniers sont assez loin mais le 4e ne l'ai pas donc franchement juste un soucis de performances, les drive throught ont pas aidé mais on va remonter"
+          },
+          {
+            q: 'Comment vous vous sentez dans la voiture ?',
+            a: "La voiture est mieux, franchement c'est bien depuis les nouvelles améliorations, elle pouvais jouer le podium sur le grand prix."
+          },
+          {
+            q: 'Pensez vous pouvoir rebondir pour les prochaines courses ? Et si oui quand ?',
+            a: 'On va tout faire pour ce préparé au mieux pour le prochain grand prix et pour essayer de faire la meilleur performance mais franchement je suis optimiste pour aller chercher de bon points qui à ce stade de la compétition indispensable.'
+          },
+        ]
+      },
+
+      tesson: {
+        tag: 'Après-course',
+        number: '17',
+        name: 'Tesson',
+        teamColor: '#35BFFF',
+        teamName: 'Alpine F1 Team',
+        title: '« La FIA aurait dû reporter à cause de la forte pluie »',
+        date: '19 février 2026',
+        qa: [
+          {
+            q: "Que c'est il passé durant votre course ?",
+            a: "C'était une course catastrophique que l'on aime pas voir , la FIA aurait du reporté a cause de la forte pluie. Les drapeaux rouges ça a rebattue toutes les cartes et les autres pilotes qui ont réussi a les saisir je l'ai félicite mais personellement c'est surtout le problèmes d'aileron qui m'a le plus pénaliser."
+          },
+          {
+            q: "D'après vous, es-ce que la performances de votre voiture vous pénalise-t-elle pour le championnat ? Si oui, que comptez vous faire ?",
+            a: "La voiture est pas au niveau pour le championnat, on a pas les performances pour rivaliser avec les meilleurs et ça c'est un gros problème pour nous, on va tout faire pour essayer de rattraper"
+          },
+          {
+            q: 'Selon vous comment va se dérouler le reste de cette saison ?',
+            a: "Je peux pas prédire ce qu'il va se passer personne ne peux le faire. Mais si je devait donner mon avis je dirais qu'il faut que je reste concentrer car le titre rique de se jouer juqu'à la dernière course et que chaque point va être important pour le championnat. Je vais tout faire pour essayer de faire le meilleur résultat possible à chaque course et de ne pas faire d'erreur pour essayer de rester dans la course au titre jusqu'à la fin de la saison."
+          }
+        ]
+      },
+
+      alonso: {
+        tag: 'Exclusif',
+        number: '14',
+        name: 'Alonso',
+        teamColor: '#358C75',
+        teamName: 'Aston Martin F1',
+        title: '« Stroll et moi, c\'était une vraie aventure humaine »',
+        date: '3 Oct 2024',
+        qa: [
+          {
+            q: 'Comment décris-tu ta relation avec Lance Stroll au sein de l\'équipe ?',
+            a: 'Professionnelle et respectueuse. Lance est un pilote qui a beaucoup progressé. On ne s\'est pas toujours vus œil dans œil sur certaines priorités équipe, mais c\'est normal. Deux pilotes compétiteurs dans la même équipe, c\'est toujours complexe.'
+          },
+          {
+            q: 'La nouvelle que Lance ne sera plus ton coéquipier, comment tu l\'as reçue ?',
+            a: 'Je l\'ai appris par les médias comme tout le monde, soyons honnêtes. Ce n\'est jamais agréable. Mais les décisions sportives se prennent pour des raisons qui me dépassent parfois. Je lui souhaite sincèrement le meilleur.'
+          },
+          {
+            q: 'Qu\'est-ce que cette période chez Aston Martin t\'a apporté personnellement ?',
+            a: 'Une nouvelle perspective. J\'ai vu une équipe se construire, grandir, faire des erreurs et apprendre. C\'est rare de vivre ça de l\'intérieur. Sportivement, on avait espéré plus. Humainement, c\'était enrichissant.'
+          }
+        ]
+      },
+
+      perez: {
+        tag: 'Conférence de presse',
+        number: '11',
+        name: 'Perez',
+        teamColor: '#3671C6',
+        teamName: 'Red Bull Racing',
+        title: '« Je me suis battu jusqu\'au bout pour ma place »',
+        date: '22 Nov 2024',
+        qa: [
+          {
+            q: 'La pression autour de ton avenir chez Red Bull, comment tu l\'as gérée ?',
+            a: 'C\'est difficile, je ne vais pas mentir. Il y a eu des moments cette saison où j\'avais la tête ailleurs à cause de tout ce bruit autour de mon contrat. Mais j\'ai essayé de rester concentré sur la piste, c\'est le seul endroit où je peux m\'exprimer.'
+          },
+          {
+            q: 'Tu as l\'impression d\'avoir tout donné cette saison ?',
+            a: 'Oui. Peut-être que certains résultats ne l\'ont pas montré, mais je sais ce que j\'ai mis dans chaque Grand Prix. Il y a des courses où j\'ai vraiment souffert physiquement et mentalement pour aller chercher des points. Ces efforts-là ne se voient pas toujours dans les classements.'
+          },
+          {
+            q: 'Un mot sur Max comme coéquipier ?',
+            a: 'Le meilleur pilote du monde en ce moment. Partager un garage avec lui, c\'est à la fois une chance et un défi permanent. Il te pousse à être meilleur tous les jours.'
+          }
+        ]
+      },
+
+      tsunoda: {
+        tag: 'Exclusif',
+        number: '22',
+        name: 'Tsunoda',
+        teamColor: '#6692FF',
+        teamName: 'Visa CashApp RB',
+        title: '« Le transfert ? Une décision que je n\'ai pas vue venir »',
+        date: '18 Nov 2024',
+        qa: [
+          {
+            q: 'Comment tu as appris la nouvelle de ton remplacement ?',
+            a: 'J\'ai été convoqué par la direction. C\'est allé vite. Je ne m\'y attendais pas à ce moment-là, même si dans ce milieu tu sais que rien n\'est jamais garanti. C\'est le sport automobile, c\'est brutal.'
+          },
+          {
+            q: 'Pas de rancœur envers l\'équipe ?',
+            a: 'La rancœur, à quoi ça sert ? L\'équipe m\'a donné une chance en F1. J\'ai appris énormément. On n\'était pas toujours d\'accord, mais ce sont des gens qui m\'ont aidé à progresser. Je repars avec des souvenirs forts.'
+          },
+          {
+            q: 'Quel est ton objectif pour la suite de ta carrière ?',
+            a: 'Prouver que ma place est en F1. Je suis convaincu que je peux me battre avec les meilleurs si on me donne le bon outil. Ce n\'est pas une fin, c\'est un nouveau départ.'
+          }
+        ]
+      },
+
+      stroll: {
+        tag: 'Après-course',
+        number: '18',
+        name: 'Stroll',
+        teamColor: '#358C75',
+        teamName: 'Aston Martin F1',
+        title: '« J\'ai appris énormément cette saison, même dans l\'adversité »',
+        date: '10 Nov 2024',
+        qa: [
+          {
+            q: 'Cette saison a été difficile sur le plan des résultats. Comment tu l\'analyses ?',
+            a: 'On a eu une voiture qui était bonne sur certains circuits et vraiment difficile sur d\'autres. En tant que pilote, tu t\'adaptes. J\'ai travaillé énormément avec les ingénieurs pour essayer de comprendre et de progresser dans ces conditions.'
+          },
+          {
+            q: 'Le départ d\'Alonso en fin d\'année, ça change quelque chose pour toi ?',
+            a: 'Avoir Fernando comme coéquipier pendant deux saisons, c\'est une école en soi. Il est extrêmement exigeant, très détaillé dans ses retours techniques. Son départ, c\'est une page qui se tourne, mais tout ce que j\'ai appris reste avec moi.'
+          },
+          {
+            q: 'Qu\'est-ce qui te motive à continuer malgré la pression extérieure ?',
+            a: 'Ma passion pour la course. J\'ai grandi dans les paddocks, ce sport c\'est toute ma vie. Les critiques, je les entends, elles me font travailler plus dur. Un jour, les résultats parleront d\'eux-mêmes.'
+          }
+        ]
+      },
+
+      leclerc: {
+        tag: 'Exclusif',
+        number: '16',
+        name: 'Leclerc',
+        teamColor: '#E8002D',
+        teamName: 'Scuderia Ferrari',
+        title: '« Cette Ferrari avait le potentiel pour le titre »',
+        date: '5 Nov 2024',
+        qa: [
+          {
+            q: 'En regardant la saison dans son ensemble, est-ce que Ferrari a raté quelque chose ?',
+            a: 'Honnêtement, oui. La voiture avait le rythme pour se battre pour le championnat. On a eu des courses où on était les plus rapides et où on est repartis avec des points insuffisants. Que ce soit des erreurs de stratégie ou des petits problèmes mécaniques au mauvais moment, ça s\'est accumulé.'
+          },
+          {
+            q: 'Le fait qu\'Hamilton arrive chez Ferrari l\'an prochain, ça te met une pression supplémentaire ?',
+            a: 'C\'est une motivation. Lewis est le pilote le plus titré de l\'histoire. L\'avoir comme coéquipier va obliger tout le monde à se surpasser. Moi le premier. Je suis prêt pour ce challenge.'
+          },
+          {
+            q: 'Un Grand Prix qui symbolise cette saison pour toi ?',
+            a: 'Monza. Devant nos tifosi, avec cette voiture, on a tout donné. Le public est incroyable là-bas. Même quand le résultat n\'est pas là, l\'énergie des tribunes te donne des frissons. C\'est pour ça qu\'on fait ce métier.'
+          }
+        ]
+      },
+
+      hamilton: {
+        tag: 'Pré-saison',
+        number: '44',
+        name: 'Hamilton',
+        teamColor: '#27F4D2',
+        teamName: 'Mercedes-AMG Petronas',
+        title: '« Le changement Ferrari ? La meilleure décision de ma carrière »',
+        date: '28 Oct 2024',
+        qa: [
+          {
+            q: 'Pourquoi Ferrari ? Pourquoi maintenant ?',
+            a: 'Il y a des opportunités dans une vie qui ne se représentent pas deux fois. Ferrari, c\'est l\'histoire de la F1. Quand le projet s\'est présenté, j\'ai compris que c\'était le bon moment pour ce nouveau chapitre. À ce stade de ma carrière, je veux me challenger différemment.'
+          },
+          {
+            q: 'Quitter Mercedes après tant d\'années, ça a été une décision difficile ?',
+            a: 'Extrêmement difficile émotionnellement. Cette équipe m\'a tout donné. Six de mes sept titres, c\'est avec eux. Ces gens sont comme une famille. Partir ne veut pas dire effacer tout ça. Ça reste gravé pour toujours.'
+          },
+          {
+            q: 'Un dernier message pour les fans de Mercedes ?',
+            a: 'Merci. Du fond du cœur. Votre soutien pendant toutes ces années m\'a porté dans les moments les plus durs. Ce chapitre se ferme, mais la gratitude, elle, ne finit jamais.'
+          }
+        ]
+      }
+
+    };
+
+
+    /* ─── OPEN MODAL ─── */
+    function openModal(key) {
+      const d = interviews[key];
+      if (!d) return;
+
+      document.getElementById('modalTag').textContent = d.tag;
+      document.getElementById('modalNumber').textContent = d.number;
+      document.getElementById('modalName').textContent = d.name;
+      document.getElementById('modalTeamDot').style.background = d.teamColor;
+      document.getElementById('modalTeamName').textContent = d.teamName;
+      document.getElementById('modalTitle').textContent = d.title;
+      document.getElementById('modalDate').textContent = d.date;
+
+      document.getElementById('modalContent').innerHTML = d.qa.map((item, i) => `
+        <div class="qa-block">
+          <div class="qa-question">
+            <span class="qa-q-label">Q</span>
+            <span class="qa-q-text">${item.q}</span>
+          </div>
+          <div class="qa-answer">${item.a}</div>
+        </div>
+        ${i < d.qa.length - 1 ? '<div class="qa-divider"></div>' : ''}
+      `).join('');
+
+      const overlay = document.getElementById('modalOverlay');
+      overlay.scrollTop = 0;
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    /* ─── CLOSE MODAL ─── */
+    function closeModal() {
+      document.getElementById('modalOverlay').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    /* Clic en dehors = fermeture */
+    function handleOverlayClick(e) {
+      if (e.target === document.getElementById('modalOverlay')) closeModal();
+    }
+
+    /* Touche Échap = fermeture */
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+    /* ─── SUBNAV ─── */
+    function setSubnav(e, el) {
+      e.preventDefault();
+      document.querySelectorAll('.subnav-link').forEach(l => l.classList.remove('active'));
+      el.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
