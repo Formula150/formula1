@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grand Prix — Saison 2024</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./public/css/calendrier.css">
+  <link rel="icon" type="image/x-icon" href="../logo_f1.png">
+ <style>
+   
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-left">
+      <a href="../index.html" class="nav-logo">FIA</a>
+      <a href="../index.html" class="nav-title">Saison 2024</a>
+    </div>
+    <div class="nav-links">
+      <a href="../index.html" class="nav-link">Accueil</a>
+      <a href="../gp/calendrier.html" class="nav-link active">Grand Prix</a>
+      <a href="../interview/interview.html" class="nav-link">Interviews</a>
+    </div>
+    <div class="nav-right">
+      <a href="#" class="nav-btn">Magasin</a>
+      <a href="#" class="nav-btn">Authentique</a>
+      <a href="#" class="nav-f1tv">F1 TV</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-label">Calendrier officiel</div>
+    <h1 class="hero-title">Grand Prix 2024</h1>
+    <p class="hero-sub">24 courses · 21 pays · 5 continents</p>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-value"><span>24</span></div>
+        <div class="hero-stat-label">Courses</div>
+      </div>
+      <div>
+        <div class="hero-stat-value"><span>215</span></div>
+        <div class="hero-stat-label">Points champion</div>
+      </div>
+      <div>
+        <div class="hero-stat-value"><span>4</span></div>
+        <div class="hero-stat-label">Vainqueurs différents</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILTER BAR -->
+  <div class="filter-bar">
+    <div class="filter-pill active" onclick="setFilter(event, 'all')">Tous</div>
+    <div class="filter-pill" onclick="setFilter(event, 'done')">Terminés</div>
+    <div class="filter-pill" onclick="setFilter(event, 'upcoming')">À venir</div>
+    <div class="view-toggle">
+      <button class="view-btn active" id="btnGrid" onclick="setView('grid')" title="Grille">
+        <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M1 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1zM1 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1zM1 12a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1z"/></svg>
+      </button>
+      <button class="view-btn" id="btnList" onclick="setView('list')" title="Liste">
+        <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- MAIN -->
+  <main class="main" id="mainContent"></main>
+
+  <footer class="footer">
+    <span class="footer-text">© 2024 Saison F1 — Carrière personnelle</span>
+    <span class="footer-logo">F1 2024</span>
+    <span class="footer-text">Fait avec passion 🏎</span>
+  </footer>
+
+  <script>
+    /* ═══════════════════════════════════════════════════════
+       DONNÉES — 24 GP Saison 2024
+       ► page : nom exact de ta page résultat (ex: resultatabudhabi.html)
+         Si pas de page encore, laisse page: null
+    ═══════════════════════════════════════════════════════ */
+    const gps = [
+      {
+        round: 1, flag: '🇦🇺', name: 'Australie', circuit: 'Albert Park Circuit, Melbourne', date: '24 Mars 2024',
+        status: 'done', page: 'gp_australie/resultataustralie.html',
+        winner: { name: 'Tesson', color: 'rgb(53, 191, 216)', time: '1:20:26.843' },
+        p2: { name: 'Moreau', color: 'rgb(39, 244, 210)' }, p3: { name: 'Thomine', color: 'rgb(16, 114, 25)' },
+        winner_tag: 'tesson'
+      },
+      {
+        round: 2, flag: '🇨🇳', name: 'Chine', circuit: 'Shanghai International Circuit', date: '21 Avr 2024',
+        status: 'done', page: 'gp_chine/resultatchine.html',
+        winner: { name: 'Piastri', color: '#FF8000', time: '1:40:52.554' },
+        p2: { name: 'Verstappen', color: '#3671C6' }, p3: { name: 'Hamilton', color: 'rgb(39, 244, 210)' },
+        winner_tag: 'piastri'
+      },
+      {
+        round: 3, flag: '🇯🇵', name: 'Japon', circuit: 'Suzuka International Racing Course', date: '7 Avr 2024',
+        status: 'done', page: 'gp_japon/resultatjapon.html',
+        winner: { name: 'Moreau', color: 'rgb(39, 244, 210)', time: '1:54:23.566' },
+        p2: { name: 'Leclerc', color: 'rgb(232, 0, 45)' }, p3: { name: 'Norris', color: 'rgb(255, 128, 0)' },
+        winner_tag: 'moreau'
+      },
+      {
+        round: 4, flag: '🇧🇭', name: 'Bahreïn', circuit: 'Bahrain International Circuit', date: '2 Mars 2024',
+        status: 'done', page: 'gp_bahrein/resultatbahrein.html',
+        winner: { name: 'Tesson', color: 'rgb(53, 191, 216)', time: '1:31:44.742' },
+        p2: { name: 'Thomine', color: 'rgb(16, 114, 25)' }, p3: { name: 'Norris', color: 'rgb(255, 128, 0)' },
+        winner_tag: 'tesson'
+      },
+      {
+        round: 5, flag: '🇸🇦', name: 'Arabie Saoudite', circuit: 'Jeddah Corniche Circuit', date: '9 Mars 2024',
+        status: 'done', page: 'gp_arabie_saoudite/resultatarabiesaoudite.html',
+        winner: { name: 'Moreau', color: 'rgb(39, 244, 210)', time: '1:20:43.273' },
+        p2: { name: 'Tesson', color: 'rgb(53, 191, 216)' }, p3: { name: 'Verstappen', color: 'rgb(54, 113, 198)' },
+        winner_tag: 'moreau'
+      },
+      {
+        round: 6, flag: '🇺🇸', name: 'Miami', circuit: 'Miami International Autodrome', date: '5 Mai 2024',
+        status: 'done', page: 'gp_miami/resultatmiami.html',
+        winner: { name: 'Moreau', color: 'rgb(39, 244, 210)', time: '1:30:49.876' },
+        p2: { name: 'Tesson', color: 'rgb(53, 191, 216)' }, p3: { name: 'Pérez', color: 'rgb(54, 113, 198)' },
+        winner_tag: 'moreau'
+      },
+      {
+        round: 7, flag: '🇮🇹', name: 'Émilie-Romagne', circuit: 'Autodromo Enzo e Dino Ferrari, Imola', date: '19 Mai 2024',
+        status: 'done', page: 'gp_italie_imola/resultatitalieimola.html',
+        winner: { name: 'Tesson', color: 'rgb(53, 191, 216)', time: '1:24:02.571' },
+        p2: { name: 'Moreau', color: 'rgb(39, 244, 210)' }, p3: { name: 'Piastri', color: 'rgb(255, 128, 0)' },
+        winner_tag: 'tesson'
+      },
+      {
+        round: 8, flag: '🇲🇨', name: 'Monaco', circuit: 'Circuit de Monaco, Monte-Carlo', date: '26 Mai 2024',
+        status: 'done', page: 'gp_monaco/resultatmonaco.html',
+        winner: { name: 'Verstappen', color: 'rgb(54, 113, 198)', time: '1:45:46.896' },
+        p2: { name: 'Pérez', color: 'rgb(54, 113, 198)' }, p3: { name: 'Tesson', color: 'rgb(53, 191, 216)' },
+        winner_tag: 'verstappen'
+      },
+      {
+        round: 9, flag: '🇪🇸', name: 'Espagne', circuit: 'Circuit de Barcelona-Catalunya', date: '23 Juin 2024',
+        status: 'done', page: 'gp_espagne/resultatespagne.html',
+        winner: { name: 'Tesson', color: 'rgb(53, 191, 216)', time: '1:28:54.897' },
+        p2: { name: 'Norris', color: 'rgb(255, 128, 0)' }, p3: { name: 'Piastri', color: 'rgb(255, 128, 0)' },
+        winner_tag: 'tesson'
+      },
+      {
+        round: 10, flag: '🇨🇦', name: 'Canada', circuit: 'Circuit Gilles Villeneuve, Montréal', date: '9 Juin 2024',
+        status: 'done', page: 'gp_canada/resultatcanada.html',
+        winner: { name: 'Moreau', color: 'rgb(39, 244, 210)', time: '1:45:47.927' },
+        p2: { name: 'Tesson', color: 'rgb(53, 191, 216)' }, p3: { name: 'Hamilton', color: 'rgb(39, 244, 210)' },
+        winner_tag: 'moreau'
+      },
+      {
+        round: 11, flag: '🇦🇹', name: 'Autriche', circuit: 'Red Bull Ring, Spielberg', date: '30 Juin 2024',
+        status: 'done', page: 'gp_autriche/resultatautriche.html',
+        winner: { name: 'Tesson', color: 'rgb(53, 191, 216)', time: '1:24:48.760' },
+        p2: { name: 'Verstappen', color: 'rgb(54, 113, 198)' }, p3: { name: 'Norris', color: 'rgb(255, 128, 0)' },
+        winner_tag: 'tesson'
+      },
+      {
+        round: 12, flag: '🇬🇧', name: 'Grande-Bretagne', circuit: 'Silverstone Circuit', date: '7 Juil 2024',
+        status: 'done', page: 'gp_grande_bretagne/resultatgrandebretagne.html',
+        winner: { name: 'Moreau', color: 'rgb(39, 244, 210)', time: '1:22:27.920' },
+        p2: { name: 'Tesson', color: 'rgb(53, 191, 216)' }, p3: { name: 'Verstappen', color: 'rgb(54, 113, 198)' },
+        winner_tag: 'moreau'
+      },
+      {
+        round: 13, flag: '🇧🇪', name: 'Belgique', circuit: 'Circuit de Spa-Francorchamps', date: '28 Juil 2024',
+        status: 'upcoming', page: 'gp_belgique/resultatbelgique.html',
+        winner: { name: 'Leclerc', color: 'rgb(232, 0, 45)', time: '1:46:10.508' },
+        p2: { name: 'Piastri', color: 'rgb(255, 128, 0)' }, p3: { name: 'Sainz', color: 'rgb(232, 0, 45)' },
+        winner_tag: 'leclerc'
+      },
+      {
+        round: 14, flag: '🇭🇺', name: 'Hongrie', circuit: 'Hungaroring, Budapest', date: '21 Juil 2024',
+        status: 'upcoming', page: 'gp_hongrie/resultathongrie.html',
+        winner: { name: 'Norris', color: 'rgb(255, 128, 0)', time: '1:37:17.449' },
+        p2: { name: 'Russell', color: 'rgb(39, 244, 210)' }, p3: { name: 'Piastri', color: 'rgb(255, 128, 0)' },
+        winner_tag: 'norris'
+      },
+      {
+        round: 15, flag: '🇳🇱', name: 'Pays-Bas', circuit: 'Circuit Zandvoort', date: '25 Août 2024',
+        status: 'upcoming', page: 'gp_pays_bas/resultatpaysbas.html',
+        winner: { name: 'Norris', color: 'rgb(255, 128, 0)', time: '1:30:45.519' },
+        p2: { name: 'Verstappen', color: 'rgb(54, 113, 198)' }, p3: { name: 'Leclerc', color: 'rgb(232, 0, 45)' },
+        winner_tag: 'norris'
+      },
+      {
+        round: 16, flag: '🇮🇹', name: 'Italie', circuit: 'Autodromo Nazionale di Monza', date: '1 Sep 2024',
+        status: 'upcoming', page: 'gp_italie_monza/resultatitaliemonza.html',
+        winner: { name: 'Leclerc', color: 'rgb(232, 0, 45)', time: '1:14:40.870' },
+        p2: { name: 'Piastri', color: 'rgb(255, 128, 0)' }, p3: { name: 'Norris', color: 'rgb(255, 128, 0)' },
+        winner_tag: 'leclerc'
+      },
+      {
+        round: 17, flag: '🇦🇿', name: 'Azerbaïdjan', circuit: 'Baku City Circuit', date: '15 Sep 2024',
+        status: 'upcoming', page: 'gp_azerbaidjan/resultatazerbaidjan.html',
+        winner: { name: 'Piastri', color: 'rgb(255, 128, 0)', time: '1:32:58.779' },
+        p2: { name: 'Norris', color: 'rgb(255, 128, 0)' }, p3: { name: 'Leclerc', color: 'rgb(232, 0, 45)' },
+        winner_tag: 'piastri'
+      },
+      {
+        round: 18, flag: '🇸🇬', name: 'Singapour', circuit: 'Marina Bay Street Circuit', date: '22 Sep 2024',
+        status: 'upcoming', page: 'gp_singapour/resultatsingapour.html',
+        winner: { name: 'Norris', color: 'rgb(255, 128, 0)', time: '1:46:37.418' },
+        p2: { name: 'Verstappen', color: 'rgb(54, 113, 198)' }, p3: { name: 'Piastri', color: 'rgb(255, 128, 0)' },
+        winner_tag: 'norris'
+      },
+      {
+        round: 19, flag: '🇺🇸', name: 'États-Unis', circuit: 'Circuit of the Americas, Austin', date: '20 Oct 2024',
+        status: 'upcoming', page: 'gp_etats_unis/resultatetatsunis.html',
+        winner: { name: 'Verstappen', color: 'rgb(54, 113, 198)', time: '1:35:45.571' },
+        p2: { name: 'Norris', color: 'rgb(255, 128, 0)' }, p3: { name: 'Leclerc', color: 'rgb(232, 0, 45)' },
+        winner_tag: 'verstappen'
+      },
+      {
+        round: 20, flag: '🇲🇽', name: 'Mexique', circuit: 'Autodromo Hermanos Rodriguez, Mexico', date: '27 Oct 2024',
+        status: 'upcoming', page: 'gp_mexique/resultatmexique.html',
+        winner: { name: 'Verstappen', color: 'rgb(54, 113, 198)', time: '1:34:06.723' },
+        p2: { name: 'Norris', color: 'rgb(255, 128, 0)' }, p3: { name: 'Sainz', color: 'rgb(232, 0, 45)' },
+        winner_tag: 'verstappen'
+      },
+      {
+        round: 21, flag: '🇧🇷', name: 'Brésil', circuit: 'Autodromo José Carlos Pace, São Paulo', date: '3 Nov 2024',
+        status: 'upcoming', page: 'gp_bresil/resultatbresil.html',
+        winner: { name: 'Verstappen', color: 'rgb(54, 113, 198)', time: '1:34:06.723' },
+        p2: { name: 'Esteban', color: 'rgb(255, 135, 188)' }, p3: { name: 'Leclerc', color: 'rgb(232, 0, 45)' },
+        winner_tag: 'verstappen'
+      },
+      {
+        round: 22, flag: '🇺🇸', name: 'Las Vegas', circuit: 'Las Vegas Strip Circuit', date: '23 Nov 2024',
+        status: 'upcoming', page: 'gp_las_vegas/resultatlasvegas.html',
+        winner: { name: 'Verstappen', color: 'rgb(54, 113, 198)', time: '1:29:21.785' },
+        p2: { name: 'Norris', color: 'rgb(255, 128, 0)' }, p3: { name: 'Leclerc', color: 'rgb(232, 0, 45)' },
+        winner_tag: 'verstappen'
+      },
+      {
+        round: 23, flag: '🇶🇦', name: 'Qatar', circuit: 'Losail International Circuit', date: '1 Déc 2024',
+        status: 'upcoming', page: 'gp_qatar/resultatqatar.html',
+        winner: { name: 'Piastri', color: 'rgb(255, 128, 0)', time: '1:31:05.323' },
+        p2: { name: 'Norris', color: 'rgb(255, 128, 0)' }, p3: { name: 'Verstappen', color: 'rgb(54, 113, 198)' },
+        winner_tag: 'piastri'
+      },
+      {
+        round: 24, flag: '🇦🇪', name: 'Abu Dhabi', circuit: 'Yas Marina Circuit', date: '8 Déc 2024',
+        status: 'upcoming', page: 'gp_abu_dhabi/resultatabudhabi.html',
+        winner: { name: 'Verstappen', color: 'rgb(54, 113, 198)', time: '1:26:13.574' },
+        p2: { name: 'Norris', color: 'rgb(255, 128, 0)' }, p3: { name: 'Leclerc', color: 'rgb(232, 0, 45)' },
+        winner_tag: 'verstappen'
+      },
+    ];
+
+    /* ── STATE ── */
+    let currentFilter = 'all';
+    let currentView = 'grid';
+
+    /* ── NAVIGATION ── */
+    function goToGP(page) {
+      if (page) window.location.href = page;
+    }
+
+    /* ── FILTER ── */
+    function setFilter(e, filter) {
+      currentFilter = filter;
+      document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+      e.target.classList.add('active');
+      render();
+    }
+
+    function filteredGps() {
+      if (currentFilter === 'all') return gps;
+      if (currentFilter === 'done') return gps.filter(g => g.status === 'done');
+      if (currentFilter === 'upcoming') return gps.filter(g => g.status === 'upcoming');
+      return gps.filter(g => g.winner_tag === currentFilter);
+    }
+
+    /* ── VIEW ── */
+    function setView(v) {
+      currentView = v;
+      document.getElementById('btnGrid').classList.toggle('active', v === 'grid');
+      document.getElementById('btnList').classList.toggle('active', v === 'list');
+      render();
+    }
+
+    /* ── RENDER ── */
+    function render() {
+      const data = filteredGps();
+      const main = document.getElementById('mainContent');
+
+      if (data.length === 0) {
+        main.innerHTML = `<div style="text-align:center;padding:60px 20px;color:var(--text-dim);font-family:'Barlow Condensed',sans-serif;font-size:18px;letter-spacing:1px;text-transform:uppercase;">Aucun résultat</div>`;
+        return;
+      }
+
+      if (currentView === 'grid') renderGrid(data, main);
+      else renderList(data, main);
+    }
+
+    function renderGrid(data, main) {
+      const done     = data.filter(g => g.status === 'done');
+      const upcoming = data.filter(g => g.status === 'upcoming');
+      let html = '';
+
+      if (done.length > 0) {
+        if (upcoming.length > 0 || currentFilter === 'all')
+          html += `<div class="section-label">Courses terminées (${done.length})</div>`;
+        html += `<div class="gp-grid">`;
+        done.forEach(g => { html += gpCard(g); });
+        html += `</div>`;
+      }
+
+      if (upcoming.length > 0) {
+        html += `<div class="section-label">À venir (${upcoming.length})</div>`;
+        html += `<div class="gp-grid">`;
+        upcoming.forEach(g => { html += gpCard(g); });
+        html += `</div>`;
+      }
+
+      main.innerHTML = html;
+    }
+
+    function gpCard(g) {
+      const isDone   = g.status === 'done';
+      const isNext   = g.status === 'next';
+      const hasPage  = !!g.page;
+
+      const badgeClass = isDone ? 'done' : isNext ? 'next' : 'upcoming';
+      const badgeLabel = isDone ? 'Terminé' : isNext ? 'Prochain' : 'À venir';
+
+      // Curseur et style selon si la page existe
+      const clickable  = isDone && hasPage;
+      const cardStyle  = clickable ? 'cursor:pointer;' : isDone ? 'cursor:default;' : 'cursor:default;opacity:0.6;';
+      const clickAttr  = clickable ? `onclick="goToGP('${g.page}')"` : '';
+
+      let resultsHtml = '';
+      if (isDone) {
+        const viewBtn = hasPage
+          ? `<div style="margin-top:10px;text-align:right;">
+               <span style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--red);">
+                 Voir les résultats →
+               </span>
+             </div>`
+          : '';
+        resultsHtml = `
+          <div class="gp-podium">
+            <div class="gp-winner-row">
+              <span class="gp-winner-pos">🥇</span>
+              <span class="gp-winner-dot" style="background:${g.winner.color}"></span>
+              <span class="gp-winner-name">${g.winner.name}</span>
+              <span class="gp-winner-time">${g.winner.time}</span>
+            </div>
+            <div class="gp-winner-row">
+              <span class="gp-winner-pos" style="color:#C0C0C0">🥈</span>
+              <span class="gp-winner-dot" style="background:${g.p2.color}"></span>
+              <span class="gp-winner-name">${g.p2.name}</span>
+            </div>
+            <div class="gp-winner-row">
+              <span class="gp-winner-pos" style="color:#CD7F32">🥉</span>
+              <span class="gp-winner-dot" style="background:${g.p3.color}"></span>
+              <span class="gp-winner-name">${g.p3.name}</span>
+            </div>
+          </div>
+          ${viewBtn}`;
+      } else {
+        resultsHtml = `<div class="gp-upcoming-info">Pas encore disputé</div>`;
+      }
+
+      return `
+        <div class="gp-card ${g.status}" style="${cardStyle}" ${clickAttr}>
+          <div class="gp-card-top">
+            <div>
+              <div class="gp-round">Tour ${g.round}</div>
+              <span class="gp-flag">${g.flag}</span>
+              <div class="gp-name">${g.name}</div>
+              <div class="gp-circuit">${g.circuit}</div>
+            </div>
+            <span class="gp-status-badge ${badgeClass}">${badgeLabel}</span>
+          </div>
+          <div class="gp-card-body">
+            <div class="gp-date">${g.date}</div>
+            ${resultsHtml}
+          </div>
+        </div>`;
+    }
+
+    function renderList(data, main) {
+      let html = `<div class="gp-list">`;
+      data.forEach(g => {
+        const isDone  = g.status === 'done';
+        const hasPage = !!g.page;
+        const clickable = isDone && hasPage;
+        const clickAttr = clickable ? `onclick="goToGP('${g.page}')"` : '';
+        const arrowColor = clickable ? 'var(--red)' : 'var(--text-ghost)';
+
+        html += `
+          <div class="gp-list-item" style="${clickable ? 'cursor:pointer;' : ''}" ${clickAttr}>
+            <div class="gp-list-round">${g.round}</div>
+            <div class="gp-list-flag">${g.flag}</div>
+            <div class="gp-list-info">
+              <div class="gp-list-name">${g.name}</div>
+              <div class="gp-list-circuit">${g.circuit}</div>
+            </div>
+            <div class="gp-list-date">${g.date}</div>
+            <div class="gp-list-winner">
+              ${isDone
+                ? `<span class="gp-list-winner-dot" style="background:${g.winner.color}"></span>
+                   <span class="gp-list-winner-name">${g.winner.name}</span>`
+                : `<span style="font-size:11px;color:var(--text-dim);font-family:'Barlow Condensed',sans-serif;letter-spacing:1px;text-transform:uppercase;">À venir</span>`
+              }
+            </div>
+            <span class="gp-list-arrow" style="color:${arrowColor}">›</span>
+          </div>`;
+      });
+      html += `</div>`;
+      main.innerHTML = html;
+    }
+
+    /* Init */
+    render();
+  </script>
+
+</body>
+</html>
