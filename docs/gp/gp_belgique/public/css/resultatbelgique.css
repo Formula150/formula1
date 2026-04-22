@@ -1,0 +1,101 @@
+/* ----- STYLE GLOBAL ----- */
+body {
+  margin: 0;
+  padding: 40px 20px;
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(to bottom, #8b0000, #1a1a1a);
+  background-attachment: fixed;
+  color: white;
+  text-align: center;
+}
+
+/* ----- CONTENEUR PRINCIPAL ----- */
+.container {
+  /*max-width: 800px;*/
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+/* ----- TITRE ----- */
+h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+  color: #fff;
+  text-shadow: 0 0 10px #ff0000, 0 0 20px #8b0000;
+  position: relative;
+}
+
+h1::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  margin: 15px auto 0;
+  background: linear-gradient(to right, #ff0000, #8b0000);
+  border-radius: 2px;
+  animation: pulse 1.5s infinite alternate;
+}
+
+/* Animation de la barre */
+@keyframes pulse {
+  from { transform: scaleX(1); opacity: 0.7; }
+  to { transform: scaleX(1.5); opacity: 1; }
+}
+
+
+
+/* ----- BOUTONS QUALIFS ET COURSE ----- */
+.qualif-btn, .course-btn {
+  display: inline-block;
+  margin: 40px 20px;
+  padding: 12px 24px;
+  font-size: 1.1em;
+  color: white;
+  background: linear-gradient(135deg, #ff0000, #8b0000);
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(255, 0, 0, 0.5);
+  transition: all 0.3s ease;
+  ;
+}
+
+/* ----- BOUTON RETOUR ----- */
+.home-btn {
+  display: inline-block;
+  margin-top: 260px;
+  margin-right: 1100px;
+  padding: 12px 24px;
+  font-size: 1.1em;
+  color: white;
+  background: linear-gradient(135deg, #ff0000, #8b0000);
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(255, 0, 0, 0.5);
+  transition: all 0.3s ease;
+}
+
+.home-btn:hover {
+  background: linear-gradient(135deg, #b30000, #660000);
+  transform: translateY(-2px);
+}
+
+.home-btn::before {
+  content: "← ";
+  font-size: 1.4em;
+}
+
+/* ----- RESPONSIVE ----- */
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 2.2em;
+  }
+
+  p {
+    font-size: 1.1em;
+  }
+
+  .home-btn {
+    padding: 10px 20px;
+    font-size: 1em;
+  }
+}
